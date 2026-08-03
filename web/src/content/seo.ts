@@ -1,27 +1,30 @@
 export const seo = {
-  title:
-    "Dr. Pharande's Orthodontic & Dental Clinic",
-
-  description:
-    "Trusted orthodontic and dental clinic in Aundh, Pune with over 24 years of experience providing braces, clear aligners, pediatric dentistry and painless dental treatments.",
-
-  keywords: [
-    "Orthodontist Pune",
-    "Dental Clinic Aundh",
-    "Braces",
-    "Clear Aligners",
-    "Pediatric Dentist",
-    "Root Canal",
-    "Dental Implants",
-  ],
-
-  openGraph: {
+  home: {
     title:
-      "Dr. Pharande's Orthodontic & Dental Clinic",
+      "Dr. Pharande Orthodontic & Dental Clinic | Best Orthodontist in Pune",
 
     description:
-      "Creating Healthy & Beautiful Smiles with advanced orthodontic care.",
+      "Experience advanced orthodontic and dental care with over 24 years of expertise. Book your consultation today.",
+  },
 
-    image: "/images/og-image.jpg",
+  about: {
+    title: "About Us",
+
+    description:
+      "Meet the experienced specialists behind Dr. Pharande Orthodontic & Dental Clinic.",
+  },
+
+  services: {
+    title: "Treatments",
+
+    description:
+      "Explore our orthodontic, cosmetic and restorative dental treatments.",
+  },
+
+  contact: {
+    title: "Contact",
+
+    description:
+      "Contact Dr. Pharande Orthodontic & Dental Clinic, Aundh Pune.",
   },
 } as const;

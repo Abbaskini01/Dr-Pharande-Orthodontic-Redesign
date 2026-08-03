@@ -4,32 +4,39 @@ export const doctors = [
 
     name: "Dr. Amol J. Pharande",
 
-    designation: "Consultant Orthodontist & Dentofacial Orthopedist",
+    designation:
+      "Consultant Orthodontist & Dentofacial Orthopedist",
 
     qualifications: [
       "BDS",
       "MDS Orthodontics",
     ],
 
-    experience: "24+ Years",
+    degrees:
+      "BDS from Pravara Institute of Medical Sciences; MDS in Orthodontics from SDM Institute of Dental Sciences.",
 
-    specializations: [
-      "Orthodontics",
-      "Dentofacial Orthopedics",
-      "TMJ Pain Management",
-      "Presurgical Orthodontics",
-      "Cosmetic Smile Correction",
+    certifications: [
+      "Dentofacial Orthopedist",
+      "Cosmetic Dentist",
     ],
 
+    experience: "24 Years",
+
     memberships: [
+      "Pune Orthodontic Study Group",
       "Indian Dental Association",
       "Indian Orthodontic Society",
       "World Federation of Orthodontists",
-      "Pune Orthodontic Study Group",
+    ],
+
+    specializations: [
+      "Orthodontics",
+      "TMJ Pain Management",
+      "Presurgical Orthodontics",
     ],
 
     biography:
-      "Dr. Amol J. Pharande is an experienced orthodontist dedicated to delivering ethical, patient-focused dental care using modern orthodontic techniques and advanced pain-management protocols.",
+      "Dr. Pharande earned his post-doctoral education under Prof. V.P. Jayade and believes every patient deserves a healthy, confident smile.",
 
     image: "/images/doctors/dr-amol-pharande.jpg",
   },
@@ -39,21 +46,22 @@ export const doctors = [
 
     name: "Dr. Snehal Pharande",
 
-    designation: "Consultant Cosmetic & Pediatric Dentist",
+    designation:
+      "Consultant Cosmetic & Pediatric Dentist",
 
     qualifications: [
       "BDS",
       "MDS Orthodontics",
     ],
 
-    experience: "17+ Years",
+    degrees:
+      "BDS from C.S.M.S.S Dental College and Hospital; MDS from SDM College of Dental Sciences.",
 
-    specializations: [
-      "Cosmetic Dentistry",
-      "Pediatric Dentistry",
-      "Root Canal Treatment",
-      "Smile Designing",
+    certifications: [
+      "Certificate in Cosmetic Dentistry",
     ],
+
+    experience: "17+ Years",
 
     memberships: [
       "Indian Dental Association",
@@ -61,8 +69,14 @@ export const doctors = [
       "World Federation of Orthodontists",
     ],
 
+    specializations: [
+      "Cosmetic Dentistry",
+      "Pediatric Dentistry",
+      "Root Canal Treatment",
+    ],
+
     biography:
-      "Dr. Snehal Pharande is known for her caring approach, painless treatment techniques, and exceptional expertise in pediatric and cosmetic dentistry.",
+      "Known for her caring approach, painless procedures, and exceptional pediatric dental care.",
 
     image: "/images/doctors/dr-snehal-pharande.jpg",
   },

@@ -1,54 +1,75 @@
 export const treatments = [
   {
-    title: "Orthodontic Braces",
+    title: "Orthodontic Braces & Aligners",
 
     description:
-      "Comprehensive orthodontic treatment using modern braces for properly aligned teeth and improved oral health.",
+      "Comprehensive teeth straightening using modern braces and clear aligners.",
+
+    benefits:
+      "Corrects malocclusion, improves aesthetics, and enhances oral health.",
+
+    idealPatient:
+      "Teens and adults with crowded, spaced, or misaligned teeth.",
 
     icon: "Braces",
-  },
-
-  {
-    title: "Clear Aligners",
-
-    description:
-      "Comfortable and nearly invisible aligners designed for adults and teenagers seeking aesthetic smile correction.",
-
-    icon: "Aligners",
   },
 
   {
     title: "Root Canal Treatment",
 
     description:
-      "Advanced painless root canal procedures focused on preserving your natural teeth.",
+      "Advanced painless endodontic treatment to preserve natural teeth.",
+
+    benefits:
+      "Eliminates infection while saving the original tooth.",
+
+    idealPatient:
+      "Patients with severe decay or infected dental pulp.",
 
     icon: "Tooth",
-  },
-
-  {
-    title: "Dental Implants",
-
-    description:
-      "Permanent tooth replacement solutions that restore both function and confidence.",
-
-    icon: "Implant",
   },
 
   {
     title: "Pediatric Dentistry",
 
     description:
-      "Gentle dental care designed specifically for children in a friendly environment.",
+      "Comprehensive oral healthcare specially designed for children.",
+
+    benefits:
+      "Supports healthy growth and prevents future dental complications.",
+
+    idealPatient:
+      "Infants, children, and adolescents.",
 
     icon: "Child",
+  },
+
+  {
+    title: "Dental Implants",
+
+    description:
+      "Permanent replacement for missing teeth using implant technology.",
+
+    benefits:
+      "Restores chewing ability and natural appearance.",
+
+    idealPatient:
+      "Adults with one or more missing teeth.",
+
+    icon: "Implant",
   },
 
   {
     title: "Laser Dentistry",
 
     description:
-      "Modern minimally invasive dental procedures using advanced laser technology.",
+      "Modern minimally invasive laser-assisted dental procedures.",
+
+    benefits:
+      "Reduced discomfort, less bleeding, and faster healing.",
+
+    idealPatient:
+      "Patients requiring soft tissue treatment.",
 
     icon: "Laser",
   },

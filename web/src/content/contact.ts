@@ -1,34 +1,24 @@
 export const contact = {
-  address: {
-    line1: "2nd Floor, Surmani Society",
+  address:
+    "2nd Floor, Surmani Society, Above IndusInd Bank, Opp. D.A.V. School, D.P. Road, Aundh, Pune - 411007",
 
-    line2: "Above IndusInd Bank",
-
-    landmark: "Opposite D.A.V School",
-
-    road: "D.P. Road",
-
-    city: "Aundh",
-
-    state: "Maharashtra",
-
-    postalCode: "411007",
-  },
-
-  phone: [
+  phones: [
     "+91 95610 35555",
     "+91 89830 02935",
   ],
 
-  email: "",
+  email: "drpharande.clinic@gmail.com",
 
-  workingHours: {
-    mondayToSaturday: "10:30 AM – 1:30 PM",
-
-    evening: "6:00 PM – 9:00 PM",
+  timings: {
+    weekdays:
+      "Monday - Saturday | 10:30 AM – 1:30 PM | 6:00 PM – 9:00 PM",
 
     sunday: "Closed",
   },
 
-  mapsLabel: "View on Google Maps",
+  branches: [
+    "Aundh",
+    "Baramati",
+    "Chinchwad",
+  ],
 } as const;
