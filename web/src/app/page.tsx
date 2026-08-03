@@ -3,6 +3,7 @@ import { Trust } from "@/components/features/home/trust";
 import { Services } from "@/components/features/home/services";
 import { Doctors } from "@/components/features/home/doctors";
 import { Testimonials } from "@/components/features/home/testimonials";
+import { FAQ } from "@/components/features/home/faq";
 
 export default function HomePage() {
   return (
@@ -12,6 +13,7 @@ export default function HomePage() {
       <Services />
       <Doctors />
       <Testimonials />
+      <FAQ />
     </>
   );
 }
