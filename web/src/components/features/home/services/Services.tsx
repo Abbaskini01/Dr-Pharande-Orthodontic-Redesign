@@ -1,39 +1,61 @@
 "use client";
 
+import { motion } from "framer-motion";
+import {
+  AnimatedSection,
+  FeatureCard,
+  PageHeader,
+  SectionContainer,
+} from "@/components/shared";
 import { treatments } from "@/content";
-import { Container } from "@/components/layout";
+import { staggerContainer } from "@/lib";
+import {
+  Activity,
+  HeartPulse,
+  ShieldCheck,
+  Sparkles,
+  Smile,
+} from "lucide-react";
 
-import { ServiceCard } from "./ServiceCard";
+const iconMap = {
+  Braces: Smile,
+  Tooth: HeartPulse,
+  Child: ShieldCheck,
+  Implant: Activity,
+  Laser: Sparkles,
+} as const;
 
 export function Services() {
   return (
-    <section className="py-24">
-      <Container>
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600">
-            OUR SERVICES
-          </span>
+    <SectionContainer>
+      <AnimatedSection>
+        <PageHeader
+          eyebrow="OUR TREATMENTS"
+          title="Advanced Dental & Orthodontic Care"
+          description="Comprehensive dental solutions using modern technology, painless procedures and personalized treatment plans."
+        />
+      </AnimatedSection>
 
-          <h2 className="mt-6 text-4xl font-bold lg:text-5xl">
-            Comprehensive Dental & Orthodontic Care
-          </h2>
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+      >
+        {treatments.map((service) => {
+          const Icon = iconMap[service.icon];
 
-          <p className="mt-6 text-lg text-slate-600">
-            We provide modern dental treatments tailored to every stage of life,
-            from preventive care to advanced orthodontic solutions.
-          </p>
-        </div>
-
-        <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {treatments.map((service, index) => (
-            <ServiceCard
+          return (
+            <FeatureCard
               key={service.title}
-              index={index}
-              {...service}
+              icon={Icon}
+              title={service.title}
+              description={service.description}
             />
-          ))}
-        </div>
-      </Container>
-    </section>
+          );
+        })}
+      </motion.div>
+    </SectionContainer>
   );
 }
