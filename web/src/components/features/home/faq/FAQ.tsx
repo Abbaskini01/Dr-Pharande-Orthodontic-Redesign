@@ -28,10 +28,7 @@ export function FAQ() {
         </div>
 
         <div className="mx-auto mt-16 max-w-4xl">
-          <Accordion
-            type="single"
-            collapsible
-          >
+          <Accordion defaultValue={[]}>
             {faq.map((item, index) => (
               <FAQItem
                 key={index}

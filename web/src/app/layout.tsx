@@ -16,10 +16,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Dr. Pharande Orthodontic Clinic",
-  description: "Premium Orthodontic Clinic Website",
-};
+import { defaultMetadata } from "@/lib";
+
+export const metadata = defaultMetadata;
 
 export default function RootLayout({
   children,
