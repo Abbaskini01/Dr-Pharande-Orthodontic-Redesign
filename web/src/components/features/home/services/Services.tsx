@@ -18,12 +18,19 @@ import {
 
 export function Services() {
   return (
-    <SectionContainer>
+    <SectionContainer
+      className="
+        bg-linear-to-b
+        from-background
+        via-background
+        to-slate-50/40
+      "
+    >
       <AnimatedSection>
         <PageHeader
           eyebrow="OUR TREATMENTS"
-          title="Advanced Dental & Orthodontic Care"
-          description="Comprehensive dental solutions using modern technology, painless procedures, and personalized treatment plans."
+          title="Comprehensive Dental & Orthodontic Solutions"
+          description="From preventive care and smile enhancement to advanced orthodontics, we deliver personalized treatments using modern technology and a patient-first approach."
         />
       </AnimatedSection>
 
@@ -31,8 +38,17 @@ export function Services() {
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
-        className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+        viewport={{
+          once: true,
+          amount: 0.2,
+        }}
+        className="
+          mt-16
+          grid
+          gap-6
+          sm:grid-cols-2
+          xl:grid-cols-3
+        "
       >
         {treatments.map((service) => {
           const Icon = Icons[service.icon];

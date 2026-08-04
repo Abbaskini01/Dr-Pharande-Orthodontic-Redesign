@@ -1,18 +1,32 @@
 "use client";
 
-import { AnimatedSection, PageHeader, SectionContainer, StatCard } from "@/components/shared";
+import { motion } from "framer-motion";
+
+import {
+  AnimatedSection,
+  PageHeader,
+  SectionContainer,
+  StatCard,
+} from "@/components/shared";
+
 import { clinic } from "@/content";
 import { staggerContainer } from "@/lib";
-import { motion } from "framer-motion";
 
 export function Trust() {
   return (
-    <SectionContainer className="bg-slate-50">
+    <SectionContainer
+      className="
+        bg-linear-to-b
+        from-slate-50
+        via-background
+        to-background
+      "
+    >
       <AnimatedSection>
         <PageHeader
           eyebrow="WHY PATIENTS TRUST US"
-          title="Excellence Built on Experience"
-          description="For over two decades, we've combined advanced technology with compassionate care to create healthy, confident smiles."
+          title="Clinical Excellence Built on Trust"
+          description="Combining advanced dental technology, ethical treatment, and a patient-first philosophy to deliver confident smiles for over two decades."
         />
       </AnimatedSection>
 
@@ -20,8 +34,17 @@ export function Trust() {
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
-        className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4"
+        viewport={{
+          once: true,
+          amount: 0.2,
+        }}
+        className="
+          mt-16
+          grid
+          gap-6
+          sm:grid-cols-2
+          lg:grid-cols-4
+        "
       >
         {clinic.stats.map((stat) => (
           <StatCard

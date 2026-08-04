@@ -4,14 +4,14 @@ export const testimonials = {
   reviews: "2100+",
 
   summary:
-    "Patients consistently praise the painless treatments, detailed explanations provided by the doctors, and the caring, professional staff.",
+    "Patients consistently appreciate our painless treatments, ethical consultations, advanced technology, and compassionate care that makes every dental visit comfortable and reassuring.",
 
   featured: [
     {
       author: "Verified Patient",
 
       review:
-        "Doctor explained every procedure patiently. The treatment was completely painless.",
+        "The doctors explained every step of my treatment clearly and made the entire procedure completely painless. I felt comfortable from consultation to recovery.",
 
       rating: 5,
     },
@@ -20,7 +20,7 @@ export const testimonials = {
       author: "Verified Patient",
 
       review:
-        "One of the best dental experiences I've ever had. Highly recommended.",
+        "Professional, friendly, and highly experienced. The clinic uses modern technology, and the results exceeded my expectations. I would confidently recommend them to anyone.",
 
       rating: 5,
     },
@@ -29,7 +29,7 @@ export const testimonials = {
       author: "Verified Patient",
 
       review:
-        "Very friendly staff and excellent doctors. The clinic is extremely professional.",
+        "The staff were welcoming, the doctors genuinely cared about preserving my natural teeth, and the overall experience was smooth, ethical, and stress-free.",
 
       rating: 5,
     },

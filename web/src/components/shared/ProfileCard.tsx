@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import {
+  Award,
   Briefcase,
   GraduationCap,
   UserRound,
@@ -30,6 +31,7 @@ export function ProfileCard({
   qualifications,
   experience,
   biography,
+  image,
   delay = 0,
 }: ProfileCardProps) {
   return (
@@ -40,17 +42,121 @@ export function ProfileCard({
         delay,
       }}
     >
-      <Card className="group overflow-hidden h-full">
-        <div className="relative flex h-80 items-center justify-center bg-gradient-to-br from-primary/5 via-background to-muted overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+      <Card
+        className="
+          group
+          h-full
+          overflow-hidden
+        "
+      >
+        {/* Image / Placeholder */}
+        <div
+          className="
+            relative
+            flex
+            h-80
+            items-center
+            justify-center
+            overflow-hidden
+            bg-linear-to-br
+            from-primary/5
+            via-background
+            to-muted
+          "
+        >
+          <div
+            className="
+              absolute
+              inset-0
+              bg-linear-to-t
+              from-primary/10
+              to-transparent
+              opacity-0
+              transition-opacity
+              duration-500
+              group-hover:opacity-100
+            "
+          />
 
-          <div className="flex h-28 w-28 items-center justify-center rounded-full bg-primary/10 transition-all duration-500 group-hover:scale-105 group-hover:bg-primary">
-            <UserRound className="h-14 w-14 text-primary transition-colors duration-500 group-hover:text-white" />
+          {image ? (
+            <img
+              src={image}
+              alt={name}
+              className="
+                h-full
+                w-full
+                object-cover
+              "
+            />
+          ) : (
+            <div
+              className="
+                flex
+                h-28
+                w-28
+                items-center
+                justify-center
+                rounded-full
+                bg-primary/10
+                transition-all
+                duration-500
+                group-hover:scale-105
+                group-hover:bg-primary
+              "
+            >
+              <UserRound
+                className="
+                  h-14
+                  w-14
+                  text-primary
+                  transition-colors
+                  duration-500
+                  group-hover:text-white
+                "
+              />
+            </div>
+          )}
+
+          {/* Experience Badge */}
+          <div
+            className="
+              absolute
+              bottom-6
+              right-6
+              flex
+              items-center
+              gap-2
+              rounded-full
+              border
+              border-border
+              bg-background/95
+              px-4
+              py-2
+              shadow-lg
+              backdrop-blur
+            "
+          >
+            <Award className="h-4 w-4 text-primary" />
+
+            <span className="text-sm font-semibold">
+              {experience}
+            </span>
           </div>
         </div>
 
         <CardContent className="flex flex-col p-8">
-          <h3 className="text-2xl font-bold text-foreground transition-colors duration-300 group-hover:text-primary">
+
+          <h3
+            className="
+              text-2xl
+              font-bold
+              tracking-tight
+              text-foreground
+              transition-colors
+              duration-300
+              group-hover:text-primary
+            "
+          >
             {name}
           </h3>
 
@@ -58,9 +164,18 @@ export function ProfileCard({
             {designation}
           </p>
 
-          <div className="mt-8 space-y-4">
+          <div className="mt-8 space-y-5">
+
             <div className="flex items-start gap-3">
-              <GraduationCap className="mt-1 h-5 w-5 shrink-0 text-primary" />
+              <GraduationCap
+                className="
+                  mt-1
+                  h-5
+                  w-5
+                  shrink-0
+                  text-primary
+                "
+              />
 
               <span className="leading-7 text-muted-foreground">
                 {qualifications.join(" • ")}
@@ -68,19 +183,35 @@ export function ProfileCard({
             </div>
 
             <div className="flex items-center gap-3">
-              <Briefcase className="h-5 w-5 shrink-0 text-primary" />
+              <Briefcase
+                className="
+                  h-5
+                  w-5
+                  shrink-0
+                  text-primary
+                "
+              />
 
               <span className="text-muted-foreground">
                 {experience}
               </span>
             </div>
+
           </div>
 
           <div className="mt-8 h-px bg-border" />
 
-          <p className="mt-8 flex-1 leading-8 text-muted-foreground">
+          <p
+            className="
+              mt-8
+              flex-1
+              leading-8
+              text-muted-foreground
+            "
+          >
             {biography}
           </p>
+
         </CardContent>
       </Card>
     </motion.div>

@@ -1,34 +1,63 @@
+"use client";
+
+import Link from "next/link";
+
 import { Button } from "@/components/ui/button";
 
-import { navigationItems, primaryNavigationButton } from "./navigation.data";
+import {
+  navigationItems,
+  primaryNavigationButton,
+} from "./navigation.data";
 import { NavigationItem } from "./NavigationItem";
 
 export function DesktopNavigation() {
   return (
     <nav
-      className="hidden items-center gap-8 lg:flex"
       aria-label="Primary Navigation"
+      className="
+        hidden
+        items-center
+        lg:flex
+      "
     >
-      {navigationItems.map((item) => (
-        <NavigationItem
-          key={item.href}
-          item={item}
-        />
-      ))}
+      {/* Navigation Links */}
+      <div
+        className="
+          flex
+          items-center
+          gap-9
+        "
+      >
+        {navigationItems.map((item) => (
+          <NavigationItem
+            key={item.href}
+            item={item}
+          />
+        ))}
+      </div>
 
-<Button
-  size="lg"
-  className="
-    rounded-full
-    px-6
-    font-semibold
-    shadow-sm
-    transition-all
-    hover:scale-105
-    hover:shadow-lg
-  "
->
-  {primaryNavigationButton.label}
-</Button>    </nav>
+      {/* CTA */}
+      <div className="ml-10">
+        <Link href={primaryNavigationButton.href}>
+          <Button
+            size="lg"
+            className="
+              rounded-full
+              px-7
+              font-semibold
+              shadow-md
+              transition-all
+              duration-300
+              hover:-translate-y-0.5
+              hover:scale-[1.03]
+              hover:shadow-xl
+              active:scale-[0.98]
+            "
+          >
+            {primaryNavigationButton.label}
+          </Button>
+        </Link>
+      </div>
+    </nav>
   );
 }

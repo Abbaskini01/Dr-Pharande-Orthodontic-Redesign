@@ -1,6 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import {
+  Award,
+  ShieldCheck,
+  Star,
+  Users,
+} from "lucide-react";
 
 import { fadeInUp } from "@/lib";
 
@@ -18,21 +24,115 @@ export function StatCard({
   value,
   label,
 }: StatCardProps) {
+  const isNumeric = /[\d+★]/.test(value);
+
+  function getIcon() {
+    if (label.includes("Experience")) {
+      return Award;
+    }
+
+    if (label.includes("Patients")) {
+      return Users;
+    }
+
+    if (label.includes("Rating")) {
+      return Star;
+    }
+
+    return ShieldCheck;
+  }
+
+  const Icon = getIcon();
+
   return (
     <motion.div variants={fadeInUp}>
-      <Card className="group h-full">
-        <CardContent className="flex flex-col items-center justify-center p-8 text-center">
+      <Card
+        className="
+          group
+          h-full
+          min-h-[250px]
+        "
+      >
+        <CardContent
+          className="
+            flex
+            h-full
+            flex-col
+            items-center
+            justify-center
+            p-8
+            text-center
+          "
+        >
+          {/* Icon */}
 
-          <div className="mb-5 h-1 w-16 rounded-full bg-primary transition-all duration-300 group-hover:w-24" />
+          <div
+            className="
+              mb-6
+              flex
+              h-16
+              w-16
+              items-center
+              justify-center
+              rounded-full
+              bg-primary/10
+              transition-all
+              duration-300
+              group-hover:scale-110
+              group-hover:bg-primary
+              group-hover:shadow-lg
+            "
+          >
+            <Icon
+              className="
+                h-8
+                w-8
+                text-primary
+                transition-colors
+                duration-300
+                group-hover:text-white
+              "
+            />
+          </div>
 
-          <h3 className="text-5xl font-extrabold tracking-tight text-primary transition-transform duration-300 group-hover:scale-105">
+          {/* Value */}
+
+          <h3
+            className={
+              isNumeric
+                ? `
+                  text-5xl
+                  font-extrabold
+                  tracking-tight
+                  text-primary
+                  transition-transform
+                  duration-300
+                  group-hover:scale-105
+                `
+                : `
+                  text-3xl
+                  font-bold
+                  leading-tight
+                  text-primary
+                `
+            }
+          >
             {value}
           </h3>
 
-          <p className="mt-4 max-w-[220px] text-base leading-7 text-muted-foreground">
+          {/* Label */}
+
+          <p
+            className="
+              mt-5
+              max-w-[180px]
+              text-base
+              leading-7
+              text-muted-foreground
+            "
+          >
             {label}
           </p>
-
         </CardContent>
       </Card>
     </motion.div>

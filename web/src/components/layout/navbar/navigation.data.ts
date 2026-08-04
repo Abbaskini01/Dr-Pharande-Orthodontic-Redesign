@@ -31,3 +31,15 @@ export const primaryNavigationButton = {
   label: "Book Appointment",
   href: "/contact",
 };
+
+export const navigationConfig = {
+  logo: {
+    title: "Dr. Pharande",
+    subtitle: "ORTHODONTIC CLINIC",
+  },
+
+  cta: {
+    label: "Book Appointment",
+    href: "/contact",
+  },
+} as const;

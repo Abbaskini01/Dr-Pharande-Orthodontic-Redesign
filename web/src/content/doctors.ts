@@ -13,30 +13,33 @@ export const doctors = [
     ],
 
     degrees:
-      "BDS from Pravara Institute of Medical Sciences; MDS in Orthodontics from SDM Institute of Dental Sciences.",
+      "BDS – Pravara Institute of Medical Sciences | MDS (Orthodontics) – SDM Institute of Dental Sciences",
 
     certifications: [
       "Dentofacial Orthopedist",
       "Cosmetic Dentist",
     ],
 
-    experience: "24 Years",
+    experience: "24+ Years",
 
     memberships: [
+      "Indian Dental Association (IDA)",
+      "Indian Orthodontic Society (IOS)",
+      "World Federation of Orthodontists (WFO)",
       "Pune Orthodontic Study Group",
-      "Indian Dental Association",
-      "Indian Orthodontic Society",
-      "World Federation of Orthodontists",
     ],
 
     specializations: [
       "Orthodontics",
+      "Clear Aligners",
+      "Dentofacial Orthopedics",
       "TMJ Pain Management",
       "Presurgical Orthodontics",
+      "Cosmetic Dentistry",
     ],
 
     biography:
-      "Dr. Pharande earned his post-doctoral education under Prof. V.P. Jayade and believes every patient deserves a healthy, confident smile.",
+      "Dr. Amol J. Pharande is an experienced orthodontist dedicated to creating healthy, confident smiles through ethical treatment and advanced orthodontic care. With more than two decades of clinical experience, he combines evidence-based techniques with a compassionate, patient-first philosophy.",
 
     image: "/images/doctors/dr-amol-pharande.jpg",
   },
@@ -51,11 +54,11 @@ export const doctors = [
 
     qualifications: [
       "BDS",
-      "MDS Orthodontics",
+      "Certificate in Cosmetic Dentistry",
     ],
 
     degrees:
-      "BDS from C.S.M.S.S Dental College and Hospital; MDS from SDM College of Dental Sciences.",
+      "BDS – C.S.M.S.S Dental College and Hospital",
 
     certifications: [
       "Certificate in Cosmetic Dentistry",
@@ -64,19 +67,20 @@ export const doctors = [
     experience: "17+ Years",
 
     memberships: [
-      "Indian Dental Association",
-      "Indian Orthodontic Society",
-      "World Federation of Orthodontists",
+      "Indian Dental Association (IDA)",
+      "Indian Orthodontic Society (IOS)",
+      "World Federation of Orthodontists (WFO)",
     ],
 
     specializations: [
       "Cosmetic Dentistry",
       "Pediatric Dentistry",
       "Root Canal Treatment",
+      "Preventive Dentistry",
     ],
 
     biography:
-      "Known for her caring approach, painless procedures, and exceptional pediatric dental care.",
+      "Dr. Snehal Pharande is known for her gentle approach, patient-focused care, and expertise in cosmetic and pediatric dentistry. Her warm communication style and commitment to painless treatment help patients of all ages feel comfortable and confident throughout their dental journey.",
 
     image: "/images/doctors/dr-snehal-pharande.jpg",
   },

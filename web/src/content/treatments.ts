@@ -1,45 +1,45 @@
 export const treatments = [
   {
-    title: "Orthodontic Braces & Aligners",
+    title: "Orthodontic Braces & Clear Aligners",
 
     description:
-      "Comprehensive teeth straightening using modern braces and clear aligners.",
+      "Personalized teeth-straightening solutions using modern braces and nearly invisible clear aligners for confident, healthy smiles.",
 
     benefits:
-      "Corrects malocclusion, improves aesthetics, and enhances oral health.",
+      "Improves smile aesthetics, corrects bite alignment, and supports long-term oral health.",
 
     idealPatient:
-      "Teens and adults with crowded, spaced, or misaligned teeth.",
+      "Children, teenagers, and adults with crowded, spaced, or misaligned teeth.",
 
     icon: "braces",
   },
 
   {
-    title: "Root Canal Treatment",
+    title: "Painless Root Canal Treatment",
 
     description:
-      "Advanced painless endodontic treatment to preserve natural teeth.",
+      "Advanced endodontic care designed to eliminate infection while preserving your natural tooth comfortably and effectively.",
 
     benefits:
-      "Eliminates infection while saving the original tooth.",
+      "Relieves pain, removes infection, and avoids unnecessary tooth extraction.",
 
     idealPatient:
-      "Patients with severe decay or infected dental pulp.",
+      "Patients experiencing deep decay, severe tooth pain, or infected dental pulp.",
 
     icon: "rootCanal",
   },
 
   {
-    title: "Pediatric Dentistry",
+    title: "Children's Dentistry",
 
     description:
-      "Comprehensive oral healthcare specially designed for children.",
+      "Gentle and preventive dental care focused on helping children build healthy smiles from an early age.",
 
     benefits:
-      "Supports healthy growth and prevents future dental complications.",
+      "Encourages healthy oral development while preventing future dental problems.",
 
     idealPatient:
-      "Infants, children, and adolescents.",
+      "Infants, children, and adolescents requiring routine or specialized dental care.",
 
     icon: "pediatric",
   },
@@ -48,13 +48,13 @@ export const treatments = [
     title: "Dental Implants",
 
     description:
-      "Permanent replacement for missing teeth using implant technology.",
+      "Permanent, natural-looking tooth replacement solutions that restore both confidence and everyday function.",
 
     benefits:
-      "Restores chewing ability and natural appearance.",
+      "Restores chewing ability, preserves jawbone health, and delivers a natural appearance.",
 
     idealPatient:
-      "Adults with one or more missing teeth.",
+      "Adults with one or more missing teeth seeking a long-term replacement solution.",
 
     icon: "implant",
   },
@@ -63,13 +63,13 @@ export const treatments = [
     title: "Laser Dentistry",
 
     description:
-      "Modern minimally invasive laser-assisted dental procedures.",
+      "Modern minimally invasive laser-assisted procedures offering greater comfort and faster recovery.",
 
     benefits:
-      "Reduced discomfort, less bleeding, and faster healing.",
+      "Reduces bleeding, minimizes discomfort, and promotes quicker healing.",
 
     idealPatient:
-      "Patients requiring soft tissue treatment.",
+      "Patients requiring soft tissue procedures or advanced gum treatments.",
 
     icon: "laser",
   },

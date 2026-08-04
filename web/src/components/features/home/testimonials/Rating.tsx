@@ -10,23 +10,43 @@ export function Rating({
   reviews,
 }: RatingProps) {
   return (
-    <div className="flex items-center justify-center gap-3">
-      <div className="flex text-yellow-500">
+    <div
+      className="
+        inline-flex
+        items-center
+        gap-4
+        rounded-full
+        border
+        border-border
+        bg-background
+        px-6
+        py-3
+        shadow-sm
+      "
+    >
+      {/* Stars */}
+      <div className="flex items-center gap-1 text-amber-400">
         {Array.from({ length: 5 }).map((_, index) => (
           <Star
             key={index}
-            className="h-6 w-6 fill-current"
+            className="h-5 w-5 fill-current"
           />
         ))}
       </div>
 
-      <span className="text-xl font-semibold">
-        {rating}
-      </span>
+      {/* Divider */}
+      <div className="h-6 w-px bg-border" />
 
-      <span className="text-slate-500">
-        ({reviews} Reviews)
-      </span>
+      {/* Rating */}
+      <div className="flex items-center gap-2">
+        <span className="text-xl font-bold text-foreground">
+          {rating}
+        </span>
+
+        <span className="text-sm text-muted-foreground">
+          ({reviews} Reviews)
+        </span>
+      </div>
     </div>
   );
 }

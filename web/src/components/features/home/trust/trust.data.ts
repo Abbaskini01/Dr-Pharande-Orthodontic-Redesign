@@ -1,26 +1,26 @@
 export const trustItems = [
   {
     value: "24+",
-    title: "Years of Excellence",
+    title: "Years of Clinical Excellence",
     description:
-      "Delivering ethical orthodontic and dental care for over two decades.",
+      "Providing ethical orthodontic and dental care with a patient-first approach for over two decades.",
   },
   {
     value: "2100+",
-    title: "Happy Patients",
+    title: "Verified Patient Reviews",
     description:
-      "Thousands of smiles transformed with personalized treatment.",
+      "Trusted by thousands of patients for compassionate care, transparency, and outstanding treatment outcomes.",
   },
   {
     value: "4.9★",
-    title: "Patient Rating",
+    title: "Highly Rated Care",
     description:
-      "Highly rated for painless treatment and compassionate care.",
+      "Consistently recognized for painless treatments, modern techniques, and exceptional patient satisfaction.",
   },
   {
     value: "WFO • IOS • IDA",
     title: "Professional Memberships",
     description:
-      "Recognized by leading national and international dental organizations.",
+      "Affiliated with respected national and international dental organizations, reflecting our commitment to continuous excellence.",
   },
 ] as const;

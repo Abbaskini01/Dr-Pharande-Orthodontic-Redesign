@@ -52,8 +52,8 @@ export const clinic = {
     },
 
     {
-      value: "Modern",
-      label: "Dental Technology",
+      value: "Latest",
+      label: "Technology",
     },
   ],
 } as const;
