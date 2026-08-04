@@ -20,8 +20,8 @@ export function Testimonials() {
           </h2>
 
           <p className="mt-6 text-lg text-slate-600">
-            Every smile tells a story. Here's what our patients say
-            about their experience at Dr. Pharande's Orthodontic &
+            Every smile tells a story. Here&apos; what our patients say
+            about their experience at Dr. Pharande&apos; Orthodontic &
             Dental Clinic.
           </p>
 

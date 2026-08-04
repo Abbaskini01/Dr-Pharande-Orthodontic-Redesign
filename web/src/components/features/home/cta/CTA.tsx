@@ -38,24 +38,20 @@ export function CTA() {
           </p>
 
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-            <Button
-              asChild
-              size="lg"
-            >
-              <Link href={routes.contact}>
+            <Link href={routes.contact}>
+              <Button size="lg">
                 Book Appointment
-              </Link>
-            </Button>
+              </Button>
+            </Link>
 
-            <Button
-              variant="outline"
-              size="lg"
-              asChild
-            >
-              <Link href={routes.services}>
+            <Link href={routes.services}>
+              <Button
+                variant="outline"
+                size="lg"
+              >
                 View Treatments
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </div>
         </motion.div>
       </AnimatedSection>

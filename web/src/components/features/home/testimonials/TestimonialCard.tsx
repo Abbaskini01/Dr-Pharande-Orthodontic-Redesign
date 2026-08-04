@@ -44,7 +44,7 @@ export function TestimonialCard({
           />
 
           <p className="leading-8 text-slate-600 italic">
-            "{review}"
+            &ldquo;{review}&rdquo;
           </p>
 
           <div className="mt-6 flex items-center justify-between">
