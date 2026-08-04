@@ -14,8 +14,6 @@ import {
   CardContent,
 } from "./Card";
 
-import { Icon } from "./Icon";
-
 interface ProfileCardProps {
   name: string;
   designation: string;
@@ -42,41 +40,45 @@ export function ProfileCard({
         delay,
       }}
     >
-      <Card className="overflow-hidden">
-        <div className="flex h-72 items-center justify-center bg-gradient-to-br from-blue-50 to-slate-100">
-          <UserRound className="h-20 w-20 text-blue-600" />
+      <Card className="group overflow-hidden h-full">
+        <div className="relative flex h-80 items-center justify-center bg-gradient-to-br from-primary/5 via-background to-muted overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+          <div className="flex h-28 w-28 items-center justify-center rounded-full bg-primary/10 transition-all duration-500 group-hover:scale-105 group-hover:bg-primary">
+            <UserRound className="h-14 w-14 text-primary transition-colors duration-500 group-hover:text-white" />
+          </div>
         </div>
 
-        <CardContent>
-          <h3 className="text-2xl font-bold">
+        <CardContent className="flex flex-col p-8">
+          <h3 className="text-2xl font-bold text-foreground transition-colors duration-300 group-hover:text-primary">
             {name}
           </h3>
 
-          <p className="mt-2 font-medium text-blue-600">
+          <p className="mt-2 font-medium text-primary">
             {designation}
           </p>
 
-          <div className="mt-6 flex items-center gap-2">
-            <Icon
-              icon={GraduationCap}
-              className="h-5 w-5"
-            />
+          <div className="mt-8 space-y-4">
+            <div className="flex items-start gap-3">
+              <GraduationCap className="mt-1 h-5 w-5 shrink-0 text-primary" />
 
-            <span>
-              {qualifications.join(" • ")}
-            </span>
+              <span className="leading-7 text-muted-foreground">
+                {qualifications.join(" • ")}
+              </span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <Briefcase className="h-5 w-5 shrink-0 text-primary" />
+
+              <span className="text-muted-foreground">
+                {experience}
+              </span>
+            </div>
           </div>
 
-          <div className="mt-3 flex items-center gap-2">
-            <Icon
-              icon={Briefcase}
-              className="h-5 w-5"
-            />
+          <div className="mt-8 h-px bg-border" />
 
-            <span>{experience}</span>
-          </div>
-
-          <p className="mt-6 leading-7 text-slate-600">
+          <p className="mt-8 flex-1 leading-8 text-muted-foreground">
             {biography}
           </p>
         </CardContent>
