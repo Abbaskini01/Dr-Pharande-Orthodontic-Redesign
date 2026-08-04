@@ -8,3 +8,4 @@ export * from "./StatCard";
 export * from "./ProfileCard";
 export * from "./Card";
 export * from "./Icon";
+export * from "./Typography";

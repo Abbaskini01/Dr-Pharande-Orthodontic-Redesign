@@ -1,5 +1,11 @@
 import { cn } from "@/lib/utils";
 
+import {
+  Body,
+  Eyebrow,
+  Heading,
+} from "./Typography";
+
 interface SectionHeadingProps {
   eyebrow?: string;
   title: string;
@@ -26,19 +32,19 @@ export function SectionHeading({
       )}
     >
       {eyebrow && (
-        <span className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600">
+        <Eyebrow>
           {eyebrow}
-        </span>
+        </Eyebrow>
       )}
 
-      <h2 className="mt-5 text-4xl font-bold tracking-tight text-slate-900 lg:text-5xl">
+      <Heading className="mt-5">
         {title}
-      </h2>
+      </Heading>
 
       {description && (
-        <p className="mt-6 text-lg leading-8 text-slate-600">
+        <Body className="mt-6">
           {description}
-        </p>
+        </Body>
       )}
     </div>
   );
