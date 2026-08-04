@@ -6,3 +6,5 @@ export * from "./SectionContainer";
 export * from "./SectionHeading";
 export * from "./StatCard";
 export * from "./ProfileCard";
+export * from "./Card";
+export * from "./Icon";

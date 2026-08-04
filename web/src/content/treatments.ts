@@ -11,7 +11,7 @@ export const treatments = [
     idealPatient:
       "Teens and adults with crowded, spaced, or misaligned teeth.",
 
-    icon: "Braces",
+    icon: "braces",
   },
 
   {
@@ -26,7 +26,7 @@ export const treatments = [
     idealPatient:
       "Patients with severe decay or infected dental pulp.",
 
-    icon: "Tooth",
+    icon: "rootCanal",
   },
 
   {
@@ -41,7 +41,7 @@ export const treatments = [
     idealPatient:
       "Infants, children, and adolescents.",
 
-    icon: "Child",
+    icon: "pediatric",
   },
 
   {
@@ -56,7 +56,7 @@ export const treatments = [
     idealPatient:
       "Adults with one or more missing teeth.",
 
-    icon: "Implant",
+    icon: "implant",
   },
 
   {
@@ -71,6 +71,6 @@ export const treatments = [
     idealPatient:
       "Patients requiring soft tissue treatment.",
 
-    icon: "Laser",
+    icon: "laser",
   },
 ] as const;

@@ -10,22 +10,41 @@ export const LAYOUT = {
   SECTION_Y: "py-24",
 } as const;
 
-export const BORDER_RADIUS = {
-  SM: "rounded-lg",
-  MD: "rounded-xl",
-  LG: "rounded-2xl",
-  XL: "rounded-3xl",
+export const COLORS = {
+  PRIMARY: "text-blue-600",
+  PRIMARY_BG: "bg-blue-600",
+
+  SECONDARY: "text-slate-600",
+
+  SURFACE: "bg-white",
+
+  SURFACE_ALT: "bg-slate-50",
+
+  BORDER: "border-slate-200",
+
+  SUCCESS: "text-green-600",
+
+  WARNING: "text-yellow-500",
+} as const;
+
+export const RADIUS = {
+  CARD: "rounded-3xl",
+
+  BUTTON: "rounded-xl",
+
+  BADGE: "rounded-full",
 } as const;
 
 export const SHADOW = {
-  SM: "shadow-sm",
-  MD: "shadow-md",
-  LG: "shadow-lg",
-  XL: "shadow-xl",
+  CARD: "shadow-sm",
+
+  CARD_HOVER: "hover:shadow-xl",
 } as const;
 
 export const ANIMATION = {
   FAST: 0.3,
+
   NORMAL: 0.5,
+
   SLOW: 0.8,
 } as const;
