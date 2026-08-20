@@ -26,24 +26,6 @@ export function StatCard({
 }: StatCardProps) {
   const isNumeric = /[\d+★]/.test(value);
 
-  function getIcon() {
-    if (label.includes("Experience")) {
-      return Award;
-    }
-
-    if (label.includes("Patients")) {
-      return Users;
-    }
-
-    if (label.includes("Rating")) {
-      return Star;
-    }
-
-    return ShieldCheck;
-  }
-
-  const Icon = getIcon();
-
   return (
     <motion.div variants={fadeInUp}>
       <Card
@@ -83,16 +65,51 @@ export function StatCard({
               group-hover:shadow-lg
             "
           >
-            <Icon
-              className="
-                h-8
-                w-8
-                text-primary
-                transition-colors
-                duration-300
-                group-hover:text-white
-              "
-            />
+            {label.includes("Experience") ? (
+              <Award
+                className="
+                  h-8
+                  w-8
+                  text-primary
+                  transition-colors
+                  duration-300
+                  group-hover:text-white
+                "
+              />
+            ) : label.includes("Patients") ? (
+              <Users
+                className="
+                  h-8
+                  w-8
+                  text-primary
+                  transition-colors
+                  duration-300
+                  group-hover:text-white
+                "
+              />
+            ) : label.includes("Rating") ? (
+              <Star
+                className="
+                  h-8
+                  w-8
+                  text-primary
+                  transition-colors
+                  duration-300
+                  group-hover:text-white
+                "
+              />
+            ) : (
+              <ShieldCheck
+                className="
+                  h-8
+                  w-8
+                  text-primary
+                  transition-colors
+                  duration-300
+                  group-hover:text-white
+                "
+              />
+            )}
           </div>
 
           {/* Value */}
