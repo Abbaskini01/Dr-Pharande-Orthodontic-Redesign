@@ -54,7 +54,9 @@ export function ProfileCard({
           className="
             relative
             flex
-            h-80
+            h-56
+            sm:h-72
+            lg:h-80
             items-center
             justify-center
             overflow-hidden
