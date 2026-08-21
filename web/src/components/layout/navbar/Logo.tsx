@@ -20,13 +20,14 @@ export function Logo() {
     >
       <span
         className="
-          text-[1.75rem]
+          text-[1.5rem]
           font-bold
           tracking-tight
           text-foreground
           transition-colors
           duration-300
           group-hover:text-primary
+          sm:text-[1.75rem]
         "
       >
         Dr. Pharande
@@ -35,14 +36,16 @@ export function Logo() {
       <span
         className="
           mt-1.5
-          text-[11px]
+          text-[9px]
           font-semibold
           uppercase
-          tracking-[0.38em]
+          tracking-[0.26em]
           text-muted-foreground
           transition-colors
           duration-300
           group-hover:text-primary/80
+          sm:text-[11px]
+          sm:tracking-[0.38em]
         "
       >
         ORTHODONTIC & DENTAL CLINIC

@@ -17,6 +17,7 @@ export function MobileNavigation() {
           variant="ghost"
           size="icon"
           aria-label="Open navigation menu"
+          aria-haspopup="dialog"
           aria-expanded={open}
           aria-controls="mobile-navigation"
           onClick={() => setOpen(true)}

@@ -28,7 +28,7 @@ export function Heading({
   return (
     <h2
       className={cn(
-        "font-heading text-4xl font-bold tracking-tight text-foreground",
+        "font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl",
         className
       )}
     >
@@ -60,7 +60,7 @@ export function Body({
   return (
     <p
       className={cn(
-        "text-lg leading-8 text-muted-foreground",
+        "text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8",
         className
       )}
     >

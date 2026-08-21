@@ -24,6 +24,7 @@ export function HeroButtons() {
         buttonSize="lg"
         buttonClassName="
           group
+          w-full
           rounded-full
           px-8
           shadow-lg
@@ -31,16 +32,18 @@ export function HeroButtons() {
           duration-300
           hover:-translate-y-1
           hover:shadow-xl
+          sm:w-auto
         "
       />
 
       {/* Secondary CTA */}
-      <Link href={clinic.hero.secondaryCTA.href}>
+      <Link href={clinic.hero.secondaryCTA.href} className="w-full sm:w-auto">
         <Button
           variant="outline"
           size="lg"
           className="
             group
+            w-full
             rounded-full
             border-border
             px-8
@@ -48,6 +51,7 @@ export function HeroButtons() {
             duration-300
             hover:border-primary
             hover:bg-primary/5
+            sm:w-auto
           "
         >
           {clinic.hero.secondaryCTA.label}
