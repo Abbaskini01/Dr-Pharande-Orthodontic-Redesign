@@ -21,21 +21,24 @@ export function HeroStats() {
   return (
     <div
       className="
-        mt-16
+        mt-14
         rounded-[32px]
         border
         border-border/60
         bg-background/70
-        p-6
+        p-4
         shadow-xl
         backdrop-blur-xl
+        sm:mt-16
+        sm:p-6
       "
     >
       <div
         className="
           grid
           grid-cols-2
-          gap-6
+          gap-4
+          sm:gap-6
           lg:grid-cols-4
         "
       >
@@ -60,17 +63,19 @@ export function HeroStats() {
               className="
                 group
                 flex
-                min-h-[220px]
+                min-h-[180px]
                 flex-col
                 items-center
                 justify-center
                 rounded-3xl
                 bg-background
-                p-6
+                p-4
                 transition-all
                 duration-300
                 hover:-translate-y-1
                 hover:shadow-lg
+                sm:min-h-[220px]
+                sm:p-6
               "
             >
               <div
@@ -105,10 +110,11 @@ export function HeroStats() {
               <h3
                 className="
                   text-center
-                  text-4xl
+                  text-3xl
                   font-extrabold
                   tracking-tight
                   text-primary
+                  sm:text-4xl
                 "
               >
                 {stat.value}
@@ -119,9 +125,11 @@ export function HeroStats() {
                   mt-3
                   max-w-[140px]
                   text-center
-                  text-sm
-                  leading-6
+                  text-xs
+                  leading-5
                   text-muted-foreground
+                  sm:text-sm
+                  sm:leading-6
                 "
               >
                 {stat.label}

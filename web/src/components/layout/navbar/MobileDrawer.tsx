@@ -2,6 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {
+  useEffect,
+  useRef,
+} from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 
@@ -24,6 +28,30 @@ export function MobileDrawer({
   onClose,
 }: MobileDrawerProps) {
   const pathname = usePathname();
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+
+  useEffect(() => {
+    if (!open) {
+      return;
+    }
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    closeButtonRef.current?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [open, onClose]);
 
   return (
     <AnimatePresence>
@@ -49,6 +77,9 @@ export function MobileDrawer({
           {/* Drawer */}
           <motion.aside
             id="mobile-navigation"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile navigation"
             className="
               fixed
               right-0
@@ -88,6 +119,7 @@ export function MobileDrawer({
               </div>
 
               <Button
+                ref={closeButtonRef}
                 variant="ghost"
                 size="icon"
                 onClick={onClose}

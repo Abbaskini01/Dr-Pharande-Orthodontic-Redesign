@@ -136,25 +136,29 @@ export function CTA() {
               buttonVariant="default"
               buttonSize="lg"
               buttonClassName="
+                w-full
                 rounded-full
                 bg-white
                 px-8
                 text-primary
                 hover:bg-slate-100
+                sm:w-auto
               "
             />
 
-            <Link href={routes.treatments}>
+            <Link href={routes.treatments} className="w-full sm:w-auto">
               <Button
                 variant="outline"
                 size="lg"
                 className="
+                  w-full
                   rounded-full
                   px-8
                   border-white/30
                   bg-transparent
                   text-white
                   hover:bg-white/10
+                  sm:w-auto
                 "
               >
                 Explore Treatments

@@ -14,14 +14,23 @@ export function Rating({
       className="
         inline-flex
         items-center
-        gap-4
+        justify-center
+        gap-3
+        flex-wrap
+        max-w-full
+        text-center
         rounded-full
         border
         border-border
         bg-background
-        px-6
+        px-4
         py-3
         shadow-sm
+        sm:justify-start
+        sm:gap-4
+        sm:flex-nowrap
+        sm:text-left
+        sm:px-6
       "
     >
       {/* Stars */}
@@ -35,11 +44,11 @@ export function Rating({
       </div>
 
       {/* Divider */}
-      <div className="h-6 w-px bg-border" />
+      <div className="hidden h-6 w-px bg-border sm:block" />
 
       {/* Rating */}
       <div className="flex items-center gap-2">
-        <span className="text-xl font-bold text-foreground">
+        <span className="text-lg font-bold text-foreground sm:text-xl">
           {rating}
         </span>
 

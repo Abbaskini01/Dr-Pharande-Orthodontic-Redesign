@@ -12,12 +12,12 @@ export function HeroContent() {
       <h1
         className="
           mt-8
-          text-5xl
+          text-4xl
           font-extrabold
           leading-[1.05]
           tracking-tight
           text-foreground
-          sm:text-6xl
+          sm:text-5xl
           lg:text-7xl
         "
       >
@@ -28,9 +28,11 @@ export function HeroContent() {
         className="
           mt-8
           max-w-2xl
-          text-lg
-          leading-8
+          text-base
+          leading-7
           text-muted-foreground
+          sm:text-lg
+          sm:leading-8
           lg:text-xl
         "
       >
@@ -41,7 +43,7 @@ export function HeroContent() {
         <HeroButtons />
       </div>
 
-      <div className="mt-14">
+      <div className="mt-12 sm:mt-14">
         <HeroStats />
       </div>
     </div>

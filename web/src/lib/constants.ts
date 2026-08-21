@@ -7,7 +7,7 @@ export const LAYOUT = {
   HEADER_HEIGHT: "80px",
   CONTAINER: "max-w-7xl",
   CONTENT: "max-w-3xl",
-  SECTION_Y: "py-12 sm:py-20 lg:py-24",
+  SECTION_Y: "py-10 sm:py-16 lg:py-24",
 } as const;
 
 export const COLORS = {

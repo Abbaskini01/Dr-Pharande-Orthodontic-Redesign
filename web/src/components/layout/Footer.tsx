@@ -17,7 +17,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border bg-slate-950 text-white">
-      <Container className="py-16">
+      <Container className="py-12 sm:py-16">
 
         <div className="grid gap-12 lg:grid-cols-4">
 
@@ -29,7 +29,7 @@ export function Footer() {
               Dr. Pharande
             </h3>
 
-            <p className="mt-2 text-xs uppercase tracking-[0.35em] text-slate-400">
+            <p className="mt-2 text-[10px] uppercase tracking-[0.22em] text-slate-400 sm:text-xs sm:tracking-[0.35em]">
               ORTHODONTIC & DENTAL CLINIC
             </p>
 
@@ -111,7 +111,7 @@ export function Footer() {
 
                 <Mail className="mt-1 h-5 w-5 text-primary" />
 
-                <p className="text-slate-300">
+                <p className="break-all text-slate-300 sm:break-normal">
                   info@drpharande.com
                 </p>
 
@@ -157,7 +157,7 @@ export function Footer() {
 
         <div className="mt-16 border-t border-slate-800 pt-8">
 
-          <div className="flex flex-col items-center justify-between gap-4 text-sm text-slate-400 md:flex-row">
+          <div className="flex flex-col items-center justify-between gap-4 text-center text-sm text-slate-400 md:flex-row md:text-left">
 
             <p>
               © {year} Dr. Pharande Orthodontic & Dental Clinic.

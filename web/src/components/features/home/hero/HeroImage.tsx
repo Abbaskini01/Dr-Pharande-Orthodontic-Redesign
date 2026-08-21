@@ -41,7 +41,7 @@ export function HeroImage() {
           flex
           aspect-[4/5]
           w-full
-          max-w-md
+          max-w-sm
           items-center
           justify-center
           overflow-hidden
@@ -53,14 +53,15 @@ export function HeroImage() {
           via-background
           to-primary/5
           shadow-2xl
+          sm:max-w-md
         "
       >
         {/* Placeholder */}
-        <div className="px-10 text-center">
+        <div className="px-6 text-center sm:px-10">
 
           <Smile className="mx-auto mb-6 h-20 w-20 text-primary" />
 
-          <h3 className="text-3xl font-bold text-foreground">
+          <h3 className="text-2xl font-bold text-foreground sm:text-3xl">
             Doctor Photograph
           </h3>
 
@@ -78,14 +79,17 @@ export function HeroImage() {
           }}
           className="
             absolute
-            left-6
-            top-8
+            left-3
+            top-4
             rounded-2xl
             border
             border-border
             bg-background
-            p-5
+            p-3
             shadow-xl
+            sm:left-6
+            sm:top-8
+            sm:p-5
           "
         >
           <Award className="mb-2 h-6 w-6 text-primary" />
@@ -106,14 +110,17 @@ export function HeroImage() {
           }}
           className="
             absolute
-            bottom-8
-            right-6
+            bottom-4
+            right-3
             rounded-2xl
             border
             border-border
             bg-background
-            p-5
+            p-3
             shadow-xl
+            sm:bottom-8
+            sm:right-6
+            sm:p-5
           "
         >
           <ShieldCheck className="mb-2 h-6 w-6 text-green-600" />
