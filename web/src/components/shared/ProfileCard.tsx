@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Award,
@@ -55,8 +56,6 @@ export function ProfileCard({
             relative
             flex
             h-56
-            sm:h-72
-            lg:h-80
             items-center
             justify-center
             overflow-hidden
@@ -64,6 +63,8 @@ export function ProfileCard({
             from-primary/5
             via-background
             to-muted
+            sm:h-72
+            lg:h-80
           "
         >
           <div
@@ -81,12 +82,12 @@ export function ProfileCard({
           />
 
           {image ? (
-            <img
+            <Image
               src={image}
               alt={name}
+              fill
+              sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
               className="
-                h-full
-                w-full
                 object-cover
               "
             />
@@ -147,7 +148,6 @@ export function ProfileCard({
         </div>
 
         <CardContent className="flex flex-col p-8">
-
           <h3
             className="
               text-2xl
@@ -167,7 +167,6 @@ export function ProfileCard({
           </p>
 
           <div className="mt-8 space-y-5">
-
             <div className="flex items-start gap-3">
               <GraduationCap
                 className="
@@ -198,7 +197,6 @@ export function ProfileCard({
                 {experience}
               </span>
             </div>
-
           </div>
 
           <div className="mt-8 h-px bg-border" />
@@ -213,7 +211,6 @@ export function ProfileCard({
           >
             {biography}
           </p>
-
         </CardContent>
       </Card>
     </motion.div>

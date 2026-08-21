@@ -80,16 +80,51 @@ export function StatCard({
               group-hover:shadow-lg
             "
           >
-            <Icon
-              className="
-                h-8
-                w-8
-                text-primary
-                transition-colors
-                duration-300
-                group-hover:text-white
-              "
-            />
+            {label.includes("Experience") ? (
+              <Award
+                className="
+                  h-8
+                  w-8
+                  text-primary
+                  transition-colors
+                  duration-300
+                  group-hover:text-white
+                "
+              />
+            ) : label.includes("Patients") ? (
+              <Users
+                className="
+                  h-8
+                  w-8
+                  text-primary
+                  transition-colors
+                  duration-300
+                  group-hover:text-white
+                "
+              />
+            ) : label.includes("Rating") ? (
+              <Star
+                className="
+                  h-8
+                  w-8
+                  text-primary
+                  transition-colors
+                  duration-300
+                  group-hover:text-white
+                "
+              />
+            ) : (
+              <ShieldCheck
+                className="
+                  h-8
+                  w-8
+                  text-primary
+                  transition-colors
+                  duration-300
+                  group-hover:text-white
+                "
+              />
+            )}
           </div>
 
           {/* Value */}
