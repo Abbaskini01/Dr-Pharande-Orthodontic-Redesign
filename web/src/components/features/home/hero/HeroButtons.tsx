@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowRight, CalendarDays } from "lucide-react";
 
+import { BookingDialog } from "@/components/shared";
 import { Button } from "@/components/ui/button";
 import { clinic } from "@/content";
 
@@ -11,25 +12,27 @@ export function HeroButtons() {
     <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
 
       {/* Primary CTA */}
-      <Link href={clinic.hero.primaryCTA.href}>
-        <Button
-          size="lg"
-          className="
-            group
-            rounded-full
-            px-8
-            shadow-lg
-            transition-all
-            duration-300
-            hover:-translate-y-1
-            hover:shadow-xl
-          "
-        >
-          <CalendarDays className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
-
-          {clinic.hero.primaryCTA.label}
-        </Button>
-      </Link>
+      <BookingDialog
+        buttonLabel={clinic.hero.primaryCTA.label}
+        triggerContent={
+          <>
+            <CalendarDays className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+            {clinic.hero.primaryCTA.label}
+          </>
+        }
+        buttonVariant="default"
+        buttonSize="lg"
+        buttonClassName="
+          group
+          rounded-full
+          px-8
+          shadow-lg
+          transition-all
+          duration-300
+          hover:-translate-y-1
+          hover:shadow-xl
+        "
+      />
 
       {/* Secondary CTA */}
       <Link href={clinic.hero.secondaryCTA.href}>

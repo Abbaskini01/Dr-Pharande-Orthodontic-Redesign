@@ -1,35 +1,33 @@
 import type { NavigationItem } from "./types";
 
+import { routes } from "@/lib";
+
 export const navigationItems: NavigationItem[] = [
   {
     label: "Home",
-    href: "/",
+    href: routes.home,
   },
   {
-    label: "About",
-    href: "/about",
+    label: "The Clinic",
+    href: routes.about,
   },
   {
     label: "Treatments",
-    href: "/treatments",
+    href: routes.treatments,
   },
   {
-    label: "Gallery",
-    href: "/gallery",
-  },
-  {
-    label: "Testimonials",
-    href: "/testimonials",
+    label: "Transformations",
+    href: routes.transformations,
   },
   {
     label: "Contact",
-    href: "/contact",
+    href: routes.contact,
   },
 ];
 
 export const primaryNavigationButton = {
-  label: "Book Appointment",
-  href: "/contact",
+  label: "Book Consultation",
+  href: routes.contact,
 };
 
 export const navigationConfig = {
@@ -39,7 +37,7 @@ export const navigationConfig = {
   },
 
   cta: {
-    label: "Book Appointment",
-    href: "/contact",
+    label: primaryNavigationButton.label,
+    href: primaryNavigationButton.href,
   },
 } as const;

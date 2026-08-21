@@ -8,6 +8,8 @@ import {
   Phone,
 } from "lucide-react";
 
+import { routes } from "@/lib";
+
 import { Container } from "./Container";
 
 export function Footer() {
@@ -50,12 +52,11 @@ export function Footer() {
             <div className="mt-6 flex flex-col gap-4">
 
               {[
-                ["Home", "/"],
-                ["About", "/about"],
-                ["Treatments", "/treatments"],
-                ["Gallery", "/gallery"],
-                ["Testimonials", "/testimonials"],
-                ["Contact", "/contact"],
+                ["Home", routes.home],
+                ["The Clinic", routes.about],
+                ["Treatments", routes.treatments],
+                ["Transformations", routes.transformations],
+                ["Contact", routes.contact],
               ].map(([label, href]) => (
                 <Link
                   key={href}

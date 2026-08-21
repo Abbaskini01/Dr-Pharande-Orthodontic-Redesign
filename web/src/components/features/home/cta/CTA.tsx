@@ -3,12 +3,12 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import { Button } from "@/components/ui/button";
-
 import {
   AnimatedSection,
+  BookingDialog,
   SectionContainer,
 } from "@/components/shared";
+import { Button } from "@/components/ui/button";
 
 import {
   Icons,
@@ -131,22 +131,20 @@ export function CTA() {
               sm:flex-row
             "
           >
-            <Link href={routes.contact}>
-              <Button
-                size="lg"
-                className="
-                  rounded-full
-                  px-8
-                  bg-white
-                  text-primary
-                  hover:bg-slate-100
-                "
-              >
-                Book Appointment
-              </Button>
-            </Link>
+            <BookingDialog
+              buttonLabel="Book Consultation"
+              buttonVariant="default"
+              buttonSize="lg"
+              buttonClassName="
+                rounded-full
+                bg-white
+                px-8
+                text-primary
+                hover:bg-slate-100
+              "
+            />
 
-            <Link href={routes.services}>
+            <Link href={routes.treatments}>
               <Button
                 variant="outline"
                 size="lg"
