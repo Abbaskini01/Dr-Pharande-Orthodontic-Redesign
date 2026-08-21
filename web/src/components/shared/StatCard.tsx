@@ -20,11 +20,26 @@ interface StatCardProps {
   label: string;
 }
 
+const STAT_ICONS = {
+  experience: Award,
+  patients: Users,
+  rating: Star,
+  default: ShieldCheck,
+} as const;
+
 export function StatCard({
   value,
   label,
 }: StatCardProps) {
   const isNumeric = /[\d+★]/.test(value);
+  const iconType = label.includes("Experience")
+    ? "experience"
+    : label.includes("Patients")
+      ? "patients"
+      : label.includes("Rating")
+        ? "rating"
+        : "default";
+  const Icon = STAT_ICONS[iconType];
 
   return (
     <motion.div variants={fadeInUp}>

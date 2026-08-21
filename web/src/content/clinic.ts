@@ -31,7 +31,7 @@ export const clinic = {
 
     secondaryCTA: {
       label: "Explore Treatments",
-      href: "/services",
+      href: "/treatments",
     },
   },
 

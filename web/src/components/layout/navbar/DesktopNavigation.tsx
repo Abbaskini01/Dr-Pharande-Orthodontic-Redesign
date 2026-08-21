@@ -1,8 +1,6 @@
 "use client";
 
-import Link from "next/link";
-
-import { Button } from "@/components/ui/button";
+import { BookingDialog } from "@/components/shared";
 
 import {
   navigationItems,
@@ -38,25 +36,22 @@ export function DesktopNavigation() {
 
       {/* CTA */}
       <div className="ml-10">
-        <Link href={primaryNavigationButton.href}>
-          <Button
-            size="lg"
-            className="
-              rounded-full
-              px-7
-              font-semibold
-              shadow-md
-              transition-all
-              duration-300
-              hover:-translate-y-0.5
-              hover:scale-[1.03]
-              hover:shadow-xl
-              active:scale-[0.98]
-            "
-          >
-            {primaryNavigationButton.label}
-          </Button>
-        </Link>
+        <BookingDialog
+          buttonLabel={primaryNavigationButton.label}
+          buttonVariant="default"
+          buttonSize="lg"
+          buttonClassName="
+            px-7
+            font-semibold
+            shadow-md
+            transition-all
+            duration-300
+            hover:-translate-y-0.5
+            hover:scale-[1.03]
+            hover:shadow-xl
+            active:scale-[0.98]
+          "
+        />
       </div>
     </nav>
   );

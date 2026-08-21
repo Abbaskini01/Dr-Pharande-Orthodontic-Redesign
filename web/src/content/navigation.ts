@@ -5,23 +5,18 @@ export const navigation = [
   },
 
   {
-    label: "About",
+    label: "The Clinic",
     href: "/about",
   },
 
   {
     label: "Treatments",
-    href: "/services",
+    href: "/treatments",
   },
 
   {
-    label: "Smile Gallery",
-    href: "/gallery",
-  },
-
-  {
-    label: "Reviews",
-    href: "/reviews",
+    label: "Transformations",
+    href: "/transformations",
   },
 
   {

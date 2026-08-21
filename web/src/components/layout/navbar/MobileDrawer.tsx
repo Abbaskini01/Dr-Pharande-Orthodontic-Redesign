@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 
+import { BookingDialog } from "@/components/shared";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -135,19 +136,13 @@ export function MobileDrawer({
             {/* CTA */}
 
             <div className="border-t border-border p-6">
-              <Link
-                href={primaryNavigationButton.href}
-                onClick={onClose}
-              >
-                <Button
-                  className="
-                    w-full
-                    rounded-full
-                  "
-                >
-                  {primaryNavigationButton.label}
-                </Button>
-              </Link>
+              <BookingDialog
+                buttonLabel={primaryNavigationButton.label}
+                buttonVariant="default"
+                buttonSize="lg"
+                buttonClassName="w-full rounded-full"
+                onSelect={() => onClose()}
+              />
             </div>
 
           </motion.aside>
