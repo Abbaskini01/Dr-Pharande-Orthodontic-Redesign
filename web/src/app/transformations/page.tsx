@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { testimonials } from "@/content";
+import { createPageMetadata } from "@/lib";
 import { TransformationsClient } from "./TransformationsClient";
 
-export const metadata: Metadata = {
-  title: "Transformations | Dr. Pharande Orthodontic & Dental Clinic",
-  description:
-    "Discover patient satisfaction highlights, verified reviews, and real smile transformation stories from Dr. Pharande Orthodontic & Dental Clinic.",
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Transformations",
+  description: testimonials.summary,
+  path: "/transformations",
+});
 
 export default function TransformationsPage() {
   return <TransformationsClient />;

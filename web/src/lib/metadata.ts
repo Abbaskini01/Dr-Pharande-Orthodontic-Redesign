@@ -16,6 +16,7 @@ export const defaultMetadata: Metadata = {
     "Aligners",
     "Root Canal",
     "Dental Implants",
+    "Laser Dentistry",
   ],
 
   authors: [
@@ -26,10 +27,51 @@ export const defaultMetadata: Metadata = {
 
   openGraph: {
     title: "Dr. Pharande Orthodontic & Dental Clinic",
-
-    description:
-      "Advanced Orthodontic & Dental Care in Pune.",
-
+    description: "Advanced Orthodontic & Dental Care in Pune.",
+    siteName: "Dr. Pharande Orthodontic & Dental Clinic",
+    locale: "en_IN",
     type: "website",
   },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Dr. Pharande Orthodontic & Dental Clinic",
+    description: "Advanced Orthodontic & Dental Care in Pune with 24+ Years of Excellence.",
+  },
 };
+
+interface CreatePageMetadataParams {
+  title: string;
+  description: string;
+  path?: string;
+  absoluteTitle?: boolean;
+}
+
+export function createPageMetadata({
+  title,
+  description,
+  path = "",
+  absoluteTitle = false,
+}: CreatePageMetadataParams): Metadata {
+  const pageTitle = absoluteTitle
+    ? title
+    : `${title} | Dr. Pharande Orthodontic & Dental Clinic`;
+
+  return {
+    title: absoluteTitle ? { absolute: title } : title,
+    description,
+    openGraph: {
+      title: pageTitle,
+      description,
+      siteName: "Dr. Pharande Orthodontic & Dental Clinic",
+      locale: "en_IN",
+      type: "website",
+      url: path ? `https://drpharande.com${path}` : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: pageTitle,
+      description,
+    },
+  };
+}

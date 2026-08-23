@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { seo } from "@/content";
+import { createPageMetadata } from "@/lib";
 import { ContactClient } from "./ContactClient";
 
-export const metadata: Metadata = {
-  title: "Contact Us | Dr. Pharande Orthodontic & Dental Clinic",
-  description:
-    "Get in touch with Dr. Pharande Orthodontic & Dental Clinic in Aundh, Pune. View clinic address, consultation timings, phone numbers, and branch locations.",
-};
+export const metadata: Metadata = createPageMetadata({
+  title: seo.contact.title,
+  description: seo.contact.description,
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return <ContactClient />;

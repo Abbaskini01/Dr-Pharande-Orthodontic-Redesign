@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { seo } from "@/content";
+import { createPageMetadata } from "@/lib";
 import { TreatmentsClient } from "./TreatmentsClient";
 
-export const metadata: Metadata = {
-  title: "Treatments | Dr. Pharande Orthodontic & Dental Clinic",
-  description:
-    "Explore our full range of orthodontic and dental treatments, including clear aligners, painless root canal care, pediatric dentistry, implants, and laser dentistry.",
-};
+export const metadata: Metadata = createPageMetadata({
+  title: seo.services.title,
+  description: seo.services.description,
+  path: "/treatments",
+});
 
 export default function TreatmentsPage() {
   return <TreatmentsClient />;

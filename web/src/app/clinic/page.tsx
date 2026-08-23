@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import { clinic } from "@/content";
+import { seo } from "@/content";
+import { createPageMetadata } from "@/lib";
 import { ClinicClient } from "./ClinicClient";
 
-export const metadata: Metadata = {
-  title: "The Clinic | Dr. Pharande Orthodontic & Dental Clinic",
-  description: clinic.uniqueSellingProposition,
-};
+export const metadata: Metadata = createPageMetadata({
+  title: seo.about.title,
+  description: seo.about.description,
+  path: "/clinic",
+});
 
 export default function ClinicPage() {
   return <ClinicClient />;

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { getAllTreatmentSlugs, getTreatmentBySlug } from "@/content";
+import { createPageMetadata } from "@/lib";
 import { TreatmentDetailClient } from "./TreatmentDetailClient";
 
 interface TreatmentDetailPageProps {
@@ -22,15 +23,17 @@ export async function generateMetadata({
   const treatment = getTreatmentBySlug(slug);
 
   if (!treatment) {
-    return {
-      title: "Treatment Not Found | Dr. Pharande Clinic",
-    };
+    return createPageMetadata({
+      title: "Treatment Not Found",
+      description: "The requested dental treatment could not be found.",
+    });
   }
 
-  return {
-    title: `${treatment.title} | Dr. Pharande Orthodontic & Dental Clinic`,
+  return createPageMetadata({
+    title: treatment.title,
     description: treatment.description,
-  };
+    path: `/treatments/${slug}`,
+  });
 }
 
 export default async function TreatmentDetailPage({
