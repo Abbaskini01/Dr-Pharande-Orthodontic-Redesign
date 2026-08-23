@@ -8,6 +8,7 @@ import {
   Phone,
 } from "lucide-react";
 
+import { contact } from "@/content";
 import { routes } from "@/lib";
 
 import { Container } from "./Container";
@@ -88,32 +89,37 @@ export function Footer() {
 
               <div className="flex gap-3">
 
-                <MapPin className="mt-1 h-5 w-5 text-primary" />
+                <MapPin className="mt-1 h-5 w-5 text-primary shrink-0" />
 
                 <p className="leading-7 text-slate-300">
-                  Aundh, Pune,
-                  Maharashtra
+                  {contact.address}
                 </p>
 
               </div>
 
               <div className="flex gap-3">
 
-                <Phone className="mt-1 h-5 w-5 text-primary" />
+                <Phone className="mt-1 h-5 w-5 text-primary shrink-0" />
 
-                <p className="text-slate-300">
-                  +91 XXXXX XXXXX
-                </p>
+                <a
+                  href={`tel:${contact.phones[0].replace(/\s+/g, "")}`}
+                  className="text-slate-300 hover:text-white transition-colors"
+                >
+                  {contact.phones[0]}
+                </a>
 
               </div>
 
               <div className="flex gap-3">
 
-                <Mail className="mt-1 h-5 w-5 text-primary" />
+                <Mail className="mt-1 h-5 w-5 text-primary shrink-0" />
 
-                <p className="break-all text-slate-300 sm:break-normal">
-                  info@drpharande.com
-                </p>
+                <a
+                  href={`mailto:${contact.email}`}
+                  className="break-all text-slate-300 hover:text-white transition-colors sm:break-normal"
+                >
+                  {contact.email}
+                </a>
 
               </div>
 

@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 
 import {
   Icons,
+  routes,
 } from "@/lib";
 
 export function CTA() {
@@ -146,7 +147,7 @@ export function CTA() {
               "
             />
 
-            <Link href="#services" className="w-full sm:w-auto">
+            <Link href={routes.treatments} className="w-full sm:w-auto">
               <Button
                 variant="outline"
                 size="lg"

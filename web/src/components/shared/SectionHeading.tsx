@@ -12,6 +12,7 @@ interface SectionHeadingProps {
   description?: string;
   align?: "left" | "center";
   className?: string;
+  isMainHeading?: boolean;
 }
 
 export function SectionHeading({
@@ -20,6 +21,7 @@ export function SectionHeading({
   description,
   align = "center",
   className,
+  isMainHeading = false,
 }: SectionHeadingProps) {
   return (
     <div
@@ -37,9 +39,15 @@ export function SectionHeading({
         </Eyebrow>
       )}
 
-      <Heading className="mt-5">
-        {title}
-      </Heading>
+      {isMainHeading ? (
+        <h1 className="font-heading mt-5 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          {title}
+        </h1>
+      ) : (
+        <Heading className="mt-5">
+          {title}
+        </Heading>
+      )}
 
       {description && (
         <Body className="mt-6">

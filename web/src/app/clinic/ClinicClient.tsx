@@ -83,6 +83,7 @@ export function ClinicClient() {
             eyebrow="OUR SPECIALISTS"
             title="Experienced Dental & Orthodontic Doctors"
             description="Meet our dedicated team of specialists who combine extensive clinical experience with compassionate patient care."
+            isMainHeading={false}
           />
 
           <div className="mt-16 grid gap-8 md:grid-cols-2">

@@ -28,6 +28,7 @@ export function Trust() {
           eyebrow="WHY PATIENTS TRUST US"
           title="Clinical Excellence Built on Trust"
           description="Combining advanced dental technology, ethical treatment, and a patient-first philosophy to deliver confident smiles for over two decades."
+          isMainHeading={false}
         />
       </AnimatedSection>
 

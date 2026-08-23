@@ -31,6 +31,7 @@ export function Testimonials() {
           eyebrow="PATIENT REVIEWS"
           title="Trusted by Thousands of Happy Smiles"
           description="Real stories from patients who experienced compassionate care, painless treatments, and life-changing smile transformations at Dr. Pharande Orthodontic & Dental Clinic."
+          isMainHeading={false}
         />
       </AnimatedSection>
 

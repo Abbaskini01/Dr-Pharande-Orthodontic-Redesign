@@ -32,6 +32,7 @@ export function FAQ() {
           eyebrow="FREQUENTLY ASKED QUESTIONS"
           title="Everything You Need Before Your Visit"
           description="Find answers to the most common questions about appointments, treatments, consultations, and patient care before visiting Dr. Pharande Orthodontic & Dental Clinic."
+          isMainHeading={false}
         />
       </AnimatedSection>
 

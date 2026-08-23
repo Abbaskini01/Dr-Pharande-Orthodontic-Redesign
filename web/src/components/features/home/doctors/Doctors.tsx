@@ -29,6 +29,7 @@ export function Doctors() {
           eyebrow="MEET OUR DOCTORS"
           title="Experienced Specialists Dedicated to Your Smile"
           description="Meet the experienced professionals behind thousands of confident smiles, combining clinical excellence, ethical care, and modern dental technology to deliver exceptional treatment experiences."
+          isMainHeading={false}
         />
       </AnimatedSection>
 

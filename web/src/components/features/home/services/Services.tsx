@@ -35,6 +35,7 @@ export function Services() {
           eyebrow="OUR TREATMENTS"
           title="Comprehensive Dental & Orthodontic Solutions"
           description="From preventive care and smile enhancement to advanced orthodontics, we deliver personalized treatments using modern technology and a patient-first approach."
+          isMainHeading={false}
         />
       </AnimatedSection>
 

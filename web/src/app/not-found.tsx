@@ -26,6 +26,7 @@ export default function NotFound() {
           description="The address may have changed, or the page was moved. You can return to our homepage or explore our specialized dental treatments."
           align="center"
           className="mt-6"
+          isMainHeading={true}
         />
 
         <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
