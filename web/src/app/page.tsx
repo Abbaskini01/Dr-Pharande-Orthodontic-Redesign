@@ -14,8 +14,8 @@ export default function HomePage() {
       <Services />
       <Doctors />
       <Testimonials />
-      <CTA />
       <FAQ />
+      <CTA />
     </>
   );
 }

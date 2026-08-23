@@ -16,6 +16,7 @@ import { staggerContainer } from "@/lib";
 export function Doctors() {
   return (
     <SectionContainer
+      id="doctors"
       className="
         bg-linear-to-b
         from-slate-50

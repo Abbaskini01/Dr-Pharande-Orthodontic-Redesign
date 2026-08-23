@@ -37,7 +37,7 @@ export function HeroButtons() {
       />
 
       {/* Secondary CTA */}
-      <Link href={clinic.hero.secondaryCTA.href} className="w-full sm:w-auto">
+      <Link href="#services" className="w-full sm:w-auto">
         <Button
           variant="outline"
           size="lg"

@@ -7,6 +7,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { createPortal } from "react-dom";
 import { CalendarRange, MessageSquareText, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -117,119 +118,128 @@ export function BookingDialog({
         {triggerContent ?? buttonLabel}
       </Button>
 
-      {isOpen && (
-        <div className="fixed inset-0 z-[60] flex items-end justify-center bg-slate-950/60 p-4 sm:items-center">
-          <button
-            type="button"
-            aria-label="Close booking dialog"
-            className="absolute inset-0"
-            onClick={() => setIsOpen(false)}
-          />
+      {isOpen &&
+        createPortal(
+          <div className="fixed inset-0 z-[60] flex items-end justify-center bg-slate-950/60 p-4 sm:items-center">
+            <button
+              type="button"
+              aria-label="Close booking dialog"
+              className="absolute inset-0"
+              onClick={() => setIsOpen(false)}
+            />
 
-          <div
-            id={dialogId}
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby={titleId}
-            aria-describedby={descriptionId}
-            className="
-              relative
-              z-10
-              w-full
-              max-w-lg
-              rounded-t-3xl
-              border
-              border-border
-              bg-background
-              p-5
-              shadow-2xl
-              sm:rounded-3xl
-            "
-          >
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-                  Concierge
-                </p>
-                <h2
-                  id={titleId}
-                  className="mt-2 text-2xl font-bold text-foreground"
-                >
-                  {title}
-                </h2>
+            <div
+              id={dialogId}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby={titleId}
+              aria-describedby={descriptionId}
+              className="
+                relative
+                z-10
+                flex
+                max-h-[calc(100dvh-2rem)]
+                w-full
+                max-w-lg
+                flex-col
+                overflow-hidden
+                rounded-t-3xl
+                border
+                border-border
+                bg-background
+                shadow-2xl
+                sm:rounded-3xl
+              "
+            >
+              <div className="shrink-0 p-5 pb-0">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+                      Concierge
+                    </p>
+                    <h2
+                      id={titleId}
+                      className="mt-2 text-2xl font-bold text-foreground"
+                    >
+                      {title}
+                    </h2>
+                  </div>
+
+                  <Button
+                    ref={closeButtonRef}
+                    type="button"
+                    variant="ghost"
+                    size="icon"
+                    aria-label="Close booking selection"
+                    onClick={() => setIsOpen(false)}
+                    className="rounded-full"
+                  >
+                    <X className="h-4 w-4" />
+                  </Button>
+                </div>
               </div>
 
-              <Button
-                ref={closeButtonRef}
-                type="button"
-                variant="ghost"
-                size="icon"
-                aria-label="Close booking selection"
-                onClick={() => setIsOpen(false)}
-                className="rounded-full"
-              >
-                <X className="h-4 w-4" />
-              </Button>
+              <div className="min-h-0 flex-1 overflow-y-auto p-5 pt-4">
+                <p
+                  id={descriptionId}
+                  className="text-sm leading-6 text-muted-foreground"
+                >
+                  {description}
+                </p>
+
+                <div className="mt-6 grid gap-3">
+                  {choices.map((choice) => {
+                    const isSelected = selectedChoice?.id === choice.id;
+
+                    return (
+                      <button
+                        key={choice.id}
+                        type="button"
+                        onClick={() => handleChoiceSelect(choice)}
+                        className={cn(
+                          "flex w-full items-start gap-3 rounded-2xl border p-4 text-left transition-all duration-300",
+                          isSelected
+                            ? "border-primary bg-primary/5"
+                            : "border-border bg-card hover:border-primary/40 hover:bg-primary/5"
+                        )}
+                        aria-label={choice.label}
+                      >
+                        <div
+                          className={cn(
+                            "mt-0.5 flex h-10 w-10 items-center justify-center rounded-full",
+                            isSelected ? "bg-primary text-white" : "bg-primary/10 text-primary"
+                          )}
+                        >
+                          {choice.id === "book-online" ? (
+                            <CalendarRange className="h-5 w-5" />
+                          ) : (
+                            <MessageSquareText className="h-5 w-5" />
+                          )}
+                        </div>
+
+                        <div>
+                          <div className="text-base font-semibold text-foreground">
+                            {choice.label}
+                          </div>
+                          <div className="mt-1 text-sm leading-6 text-muted-foreground">
+                            {choice.description}
+                          </div>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                <p aria-live="polite" className="mt-4 text-sm text-muted-foreground">
+                  {selectedChoice
+                    ? `Selected: ${selectedChoice.label}`
+                    : "No selection made yet."}
+                </p>
+              </div>
             </div>
-
-            <p
-              id={descriptionId}
-              className="mt-4 text-sm leading-6 text-muted-foreground"
-            >
-              {description}
-            </p>
-
-            <div className="mt-6 grid gap-3">
-              {choices.map((choice) => {
-                const isSelected = selectedChoice?.id === choice.id;
-
-                return (
-                  <button
-                    key={choice.id}
-                    type="button"
-                    onClick={() => handleChoiceSelect(choice)}
-                    className={cn(
-                      "flex w-full items-start gap-3 rounded-2xl border p-4 text-left transition-all duration-300",
-                      isSelected
-                        ? "border-primary bg-primary/5"
-                        : "border-border bg-card hover:border-primary/40 hover:bg-primary/5"
-                    )}
-                    aria-label={choice.label}
-                  >
-                    <div
-                      className={cn(
-                        "mt-0.5 flex h-10 w-10 items-center justify-center rounded-full",
-                        isSelected ? "bg-primary text-white" : "bg-primary/10 text-primary"
-                      )}
-                    >
-                      {choice.id === "book-online" ? (
-                        <CalendarRange className="h-5 w-5" />
-                      ) : (
-                        <MessageSquareText className="h-5 w-5" />
-                      )}
-                    </div>
-
-                    <div>
-                      <div className="text-base font-semibold text-foreground">
-                        {choice.label}
-                      </div>
-                      <div className="mt-1 text-sm leading-6 text-muted-foreground">
-                        {choice.description}
-                      </div>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-
-            <p aria-live="polite" className="mt-4 text-sm text-muted-foreground">
-              {selectedChoice
-                ? `Selected: ${selectedChoice.label}`
-                : "No selection made yet."}
-            </p>
-          </div>
-        </div>
-      )}
+          </div>,
+          document.body,
+        )}
     </>
   );
 }

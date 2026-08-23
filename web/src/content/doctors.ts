@@ -41,7 +41,7 @@ export const doctors = [
     biography:
       "Dr. Amol J. Pharande is an experienced orthodontist dedicated to creating healthy, confident smiles through ethical treatment and advanced orthodontic care. With more than two decades of clinical experience, he combines evidence-based techniques with a compassionate, patient-first philosophy.",
 
-    image: "/images/doctors/dr-amol-pharande.jpg",
+    image: "",
   },
 
   {
@@ -82,6 +82,6 @@ export const doctors = [
     biography:
       "Dr. Snehal Pharande is known for her gentle approach, patient-focused care, and expertise in cosmetic and pediatric dentistry. Her warm communication style and commitment to painless treatment help patients of all ages feel comfortable and confident throughout their dental journey.",
 
-    image: "/images/doctors/dr-snehal-pharande.jpg",
+    image: "",
   },
 ] as const;

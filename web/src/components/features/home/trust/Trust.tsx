@@ -15,6 +15,7 @@ import { staggerContainer } from "@/lib";
 export function Trust() {
   return (
     <SectionContainer
+      id="trust"
       className="
         bg-linear-to-b
         from-slate-50

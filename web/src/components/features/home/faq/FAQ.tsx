@@ -19,6 +19,7 @@ import { FAQItem } from "./FAQItem";
 export function FAQ() {
   return (
     <SectionContainer
+      id="faq"
       className="
         bg-linear-to-b
         from-background

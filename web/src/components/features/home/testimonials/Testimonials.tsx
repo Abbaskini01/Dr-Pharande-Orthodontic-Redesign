@@ -18,6 +18,7 @@ import { TestimonialCard } from "./TestimonialCard";
 export function Testimonials() {
   return (
     <SectionContainer
+      id="testimonials"
       className="
         bg-linear-to-b
         from-slate-50
@@ -39,6 +40,10 @@ export function Testimonials() {
           reviews={testimonials.reviews}
         />
       </div>
+
+      <p className="mx-auto mt-6 max-w-3xl text-center text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
+        {testimonials.summary}
+      </p>
 
       <motion.div
         variants={staggerContainer}

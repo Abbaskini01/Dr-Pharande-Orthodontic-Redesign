@@ -1,6 +1,7 @@
 "use client";
 
 import type { LucideIcon } from "lucide-react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 import { fadeInUp } from "@/lib";
@@ -16,12 +17,16 @@ interface FeatureCardProps {
   icon: LucideIcon;
   title: string;
   description: string;
+  ctaLabel?: string;
+  ctaHref?: string;
 }
 
 export function FeatureCard({
   icon: IconComponent,
   title,
   description,
+  ctaLabel = "Learn More",
+  ctaHref,
 }: FeatureCardProps) {
   return (
     <motion.div variants={fadeInUp}>
@@ -116,22 +121,38 @@ export function FeatureCard({
           </p>
 
           {/* Learn More */}
-          <span
-            className="
-              mt-8
-              inline-flex
-              items-center
-              font-medium
-              text-primary
-              opacity-0
-              transition-all
-              duration-300
-              group-hover:translate-x-1
-              group-hover:opacity-100
-            "
-          >
-            Learn More →
-          </span>
+          {ctaHref ? (
+            <Link
+              href={ctaHref}
+              className="
+                mt-8
+                inline-flex
+                items-center
+                font-medium
+                text-primary
+                transition-all
+                duration-300
+                hover:translate-x-1
+              "
+            >
+              {ctaLabel} →
+            </Link>
+          ) : (
+            <span
+              className="
+                mt-8
+                inline-flex
+                items-center
+                font-medium
+                text-primary
+                transition-all
+                duration-300
+                group-hover:translate-x-1
+              "
+            >
+              {ctaLabel} →
+            </span>
+          )}
         </CardContent>
       </Card>
     </motion.div>

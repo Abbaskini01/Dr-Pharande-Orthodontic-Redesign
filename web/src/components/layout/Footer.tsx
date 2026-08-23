@@ -53,10 +53,10 @@ export function Footer() {
 
               {[
                 ["Home", routes.home],
-                ["The Clinic", routes.about],
-                ["Treatments", routes.treatments],
-                ["Transformations", routes.transformations],
-                ["Contact", routes.contact],
+                ["The Clinic", "#trust"],
+                ["Treatments", "#services"],
+                ["Transformations", "#testimonials"],
+                ["Contact", "#consultation"],
               ].map(([label, href]) => (
                 <Link
                   key={href}

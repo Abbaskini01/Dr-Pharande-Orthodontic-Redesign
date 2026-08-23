@@ -6,14 +6,16 @@ import { LAYOUT } from "@/lib";
 interface SectionContainerProps {
   children: ReactNode;
   className?: string;
+  id?: string;
 }
 
 export function SectionContainer({
   children,
   className = "",
+  id,
 }: SectionContainerProps) {
   return (
-    <section className={`${LAYOUT.SECTION_Y} ${className}`}>
+    <section id={id} className={`${LAYOUT.SECTION_Y} ${className}`}>
       <Container>{children}</Container>
     </section>
   );

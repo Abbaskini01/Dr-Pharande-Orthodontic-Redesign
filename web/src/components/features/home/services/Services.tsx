@@ -1,13 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 import {
   AnimatedSection,
+  BookingDialog,
   FeatureCard,
   PageHeader,
   SectionContainer,
 } from "@/components/shared";
+import { Button } from "@/components/ui/button";
 
 import { treatments } from "@/content";
 
@@ -19,6 +22,7 @@ import {
 export function Services() {
   return (
     <SectionContainer
+      id="services"
       className="
         bg-linear-to-b
         from-background
@@ -59,10 +63,32 @@ export function Services() {
               icon={Icon}
               title={service.title}
               description={service.description}
+              ctaLabel="Discuss This Treatment"
+              ctaHref="#consultation"
             />
           );
         })}
       </motion.div>
+
+      <AnimatedSection>
+        <div className="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
+          <BookingDialog
+            buttonLabel="Book Consultation"
+            buttonSize="lg"
+            buttonClassName="w-full px-8 sm:w-auto"
+          />
+
+          <Link href="#consultation" className="w-full sm:w-auto">
+            <Button
+              variant="outline"
+              size="lg"
+              className="w-full px-8 sm:w-auto"
+            >
+              Speak to Our Team
+            </Button>
+          </Link>
+        </div>
+      </AnimatedSection>
     </SectionContainer>
   );
 }

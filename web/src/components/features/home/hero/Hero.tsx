@@ -11,6 +11,7 @@ import { HeroImage } from "./HeroImage";
 export function Hero() {
   return (
     <section
+      id="home"
       className="
         relative
         overflow-hidden
