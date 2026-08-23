@@ -63,8 +63,8 @@ export function Services() {
               icon={Icon}
               title={service.title}
               description={service.description}
-              ctaLabel="Discuss This Treatment"
-              ctaHref="#consultation"
+              ctaLabel="Learn More"
+              ctaHref={`/treatments/${service.slug}`}
             />
           );
         })}

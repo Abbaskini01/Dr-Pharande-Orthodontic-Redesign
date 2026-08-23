@@ -6,7 +6,7 @@ export const navigation = [
 
   {
     label: "The Clinic",
-    href: "/about",
+    href: "/clinic",
   },
 
   {

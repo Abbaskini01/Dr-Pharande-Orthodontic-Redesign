@@ -9,19 +9,19 @@ export const navigationItems: NavigationItem[] = [
   },
   {
     label: "The Clinic",
-    href: "#trust",
+    href: routes.clinic,
   },
   {
     label: "Treatments",
-    href: "#services",
+    href: routes.treatments,
   },
   {
     label: "Transformations",
-    href: "#testimonials",
+    href: routes.transformations,
   },
   {
     label: "Contact",
-    href: "#consultation",
+    href: routes.contact,
   },
 ];
 

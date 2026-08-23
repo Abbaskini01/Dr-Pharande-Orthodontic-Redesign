@@ -1,5 +1,7 @@
 export const treatments = [
   {
+    slug: "orthodontic-braces-clear-aligners",
+
     title: "Orthodontic Braces & Clear Aligners",
 
     description:
@@ -15,6 +17,8 @@ export const treatments = [
   },
 
   {
+    slug: "painless-root-canal-treatment",
+
     title: "Painless Root Canal Treatment",
 
     description:
@@ -30,6 +34,8 @@ export const treatments = [
   },
 
   {
+    slug: "childrens-dentistry",
+
     title: "Children's Dentistry",
 
     description:
@@ -45,6 +51,8 @@ export const treatments = [
   },
 
   {
+    slug: "dental-implants",
+
     title: "Dental Implants",
 
     description:
@@ -60,6 +68,8 @@ export const treatments = [
   },
 
   {
+    slug: "laser-dentistry",
+
     title: "Laser Dentistry",
 
     description:
@@ -74,3 +84,13 @@ export const treatments = [
     icon: "laser",
   },
 ] as const;
+
+export type Treatment = (typeof treatments)[number];
+
+export function getTreatmentBySlug(slug: string): Treatment | undefined {
+  return treatments.find((t) => t.slug === slug);
+}
+
+export function getAllTreatmentSlugs(): string[] {
+  return treatments.map((t) => t.slug);
+}
