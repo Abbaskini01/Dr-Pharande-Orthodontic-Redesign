@@ -55,6 +55,7 @@ export function Doctors() {
             designation={doctor.designation}
             qualifications={doctor.qualifications}
             experience={doctor.experience}
+            specializations={doctor.specializations}
             biography={doctor.biography}
             image={doctor.image}
             delay={index * 0.12}

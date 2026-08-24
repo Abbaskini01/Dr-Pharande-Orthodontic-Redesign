@@ -2,6 +2,7 @@ export * from "./AnimatedSection";
 export * from "./Badge";
 export * from "./BookingDialog";
 export * from "./FeatureCard";
+export * from "./JsonLd";
 export * from "./PageHeader";
 export * from "./SectionContainer";
 export * from "./SectionHeading";

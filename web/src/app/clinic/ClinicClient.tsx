@@ -94,6 +94,7 @@ export function ClinicClient() {
                 designation={doctor.designation}
                 qualifications={doctor.qualifications}
                 experience={doctor.experience}
+                specializations={doctor.specializations}
                 biography={doctor.biography}
                 image={doctor.image}
                 delay={idx * 0.15}

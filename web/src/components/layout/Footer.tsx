@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import {
   Clock,
@@ -137,18 +135,14 @@ export function Footer() {
 
             <div className="mt-6 flex gap-3">
 
-              <Clock className="mt-1 h-5 w-5 text-primary" />
+              <Clock className="mt-1 h-5 w-5 text-primary shrink-0" />
 
               <div className="space-y-2 text-slate-300">
 
-                <p>Monday – Saturday</p>
-
-                <p>10:30 AM – 1:30 PM</p>
-
-                <p>6:00 PM – 9:00 PM</p>
+                <p className="text-sm font-medium">{contact.timings.weekdays}</p>
 
                 <p className="pt-2 text-sm text-slate-400">
-                  Sunday Closed
+                  Sunday: {contact.timings.sunday}
                 </p>
 
               </div>

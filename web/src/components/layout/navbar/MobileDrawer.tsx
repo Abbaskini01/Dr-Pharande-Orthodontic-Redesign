@@ -143,6 +143,7 @@ export function MobileDrawer({
                   <Link
                     key={item.href}
                     href={item.href}
+                    aria-current={isActive ? "page" : undefined}
                     onClick={onClose}
                     className={cn(
                       `

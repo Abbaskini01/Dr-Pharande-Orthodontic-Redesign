@@ -4,6 +4,8 @@ import "./globals.css";
 
 import { MainLayout } from "@/components/layout";
 import { AppProviders } from "@/components/providers";
+import { JsonLd } from "@/components/shared";
+import { defaultMetadata } from "@/lib";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +16,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-import { defaultMetadata } from "@/lib";
 
 export const metadata = defaultMetadata;
 
@@ -30,6 +30,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <JsonLd />
         <AppProviders>
           <MainLayout>{children}</MainLayout>
         </AppProviders>

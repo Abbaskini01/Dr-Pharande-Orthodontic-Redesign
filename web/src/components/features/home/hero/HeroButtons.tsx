@@ -6,6 +6,7 @@ import { ArrowRight, CalendarDays } from "lucide-react";
 import { BookingDialog } from "@/components/shared";
 import { Button } from "@/components/ui/button";
 import { clinic } from "@/content";
+import { routes } from "@/lib";
 
 export function HeroButtons() {
   return (
@@ -37,7 +38,7 @@ export function HeroButtons() {
       />
 
       {/* Secondary CTA */}
-      <Link href="#services" className="w-full sm:w-auto">
+      <Link href={routes.treatments} className="w-full sm:w-auto">
         <Button
           variant="outline"
           size="lg"

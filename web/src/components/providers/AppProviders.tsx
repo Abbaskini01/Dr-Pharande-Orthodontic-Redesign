@@ -1,4 +1,7 @@
+"use client";
+
 import { ReactNode } from "react";
+import { MotionConfig } from "framer-motion";
 
 interface AppProvidersProps {
   children: ReactNode;
@@ -7,5 +10,9 @@ interface AppProvidersProps {
 export function AppProviders({
   children,
 }: AppProvidersProps) {
-  return <>{children}</>;
+  return (
+    <MotionConfig reducedMotion="user">
+      {children}
+    </MotionConfig>
+  );
 }

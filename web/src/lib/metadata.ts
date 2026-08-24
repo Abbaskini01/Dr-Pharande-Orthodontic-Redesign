@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://drpharande.com";
+
 export const defaultMetadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+
   title: {
     default: "Dr. Pharande Orthodontic & Dental Clinic",
     template: "%s | Dr. Pharande Orthodontic & Dental Clinic",
@@ -31,6 +35,7 @@ export const defaultMetadata: Metadata = {
     siteName: "Dr. Pharande Orthodontic & Dental Clinic",
     locale: "en_IN",
     type: "website",
+    url: siteUrl,
   },
 
   twitter: {
@@ -57,16 +62,21 @@ export function createPageMetadata({
     ? title
     : `${title} | Dr. Pharande Orthodontic & Dental Clinic`;
 
+  const canonicalUrl = path ? `${siteUrl}${path}` : siteUrl;
+
   return {
     title: absoluteTitle ? { absolute: title } : title,
     description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title: pageTitle,
       description,
       siteName: "Dr. Pharande Orthodontic & Dental Clinic",
       locale: "en_IN",
       type: "website",
-      url: path ? `https://drpharande.com${path}` : undefined,
+      url: canonicalUrl,
     },
     twitter: {
       card: "summary_large_image",

@@ -22,6 +22,7 @@ interface ProfileCardProps {
   qualifications: readonly string[];
   experience: string;
   biography: string;
+  specializations?: readonly string[];
   image?: string;
   delay?: number;
 }
@@ -32,6 +33,7 @@ export function ProfileCard({
   qualifications,
   experience,
   biography,
+  specializations,
   image,
   delay = 0,
 }: ProfileCardProps) {
@@ -198,6 +200,19 @@ export function ProfileCard({
               </span>
             </div>
           </div>
+
+          {specializations && specializations.length > 0 && (
+            <div className="mt-4 flex flex-wrap gap-1.5">
+              {specializations.map((spec) => (
+                <span
+                  key={spec}
+                  className="inline-flex items-center rounded-md bg-primary/5 px-2 py-0.5 text-xs font-medium text-primary"
+                >
+                  {spec}
+                </span>
+              ))}
+            </div>
+          )}
 
           <div className="mt-8 h-px bg-border" />
 

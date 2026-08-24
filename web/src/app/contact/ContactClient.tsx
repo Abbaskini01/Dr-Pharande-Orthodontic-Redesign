@@ -81,8 +81,7 @@ export function ContactClient() {
               </div>
               <h3 className="mt-6 text-xl font-bold text-foreground">Clinic Timings</h3>
               <div className="mt-4 space-y-2 text-muted-foreground">
-                <p className="font-medium text-foreground">Monday – Saturday</p>
-                <p className="text-sm">{contact.timings.weekdays}</p>
+                <p className="text-sm font-medium text-foreground">{contact.timings.weekdays}</p>
                 <p className="pt-2 text-xs font-medium text-slate-400">
                   Sunday: {contact.timings.sunday}
                 </p>
