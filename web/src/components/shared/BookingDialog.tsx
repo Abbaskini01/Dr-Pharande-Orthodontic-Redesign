@@ -8,31 +8,22 @@ import {
   type ReactNode,
 } from "react";
 import { createPortal } from "react-dom";
-import { CalendarRange, MessageSquareText, X } from "lucide-react";
+import { CalendarRange, ExternalLink, MessageSquareText, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { getBookingChoices } from "@/content/booking";
 import { cn } from "@/lib/utils";
 
 export interface BookingChoice {
   id: string;
   label: string;
   description: string;
+  href?: string;
+  target?: string;
+  rel?: string;
 }
 
-export const defaultBookingChoices: BookingChoice[] = [
-  {
-    id: "book-online",
-    label: "Book Online",
-    description:
-      "Future online scheduling flow. Replace this option with the client-approved booking destination later.",
-  },
-  {
-    id: "chat-concierge",
-    label: "Chat with Concierge",
-    description:
-      "Future concierge workflow. Replace this option with the approved concierge destination later.",
-  },
-];
+export const defaultBookingChoices: BookingChoice[] = getBookingChoices();
 
 interface BookingDialogProps {
   buttonLabel?: string;
@@ -97,6 +88,12 @@ export function BookingDialog({
     setSelectedChoice(choice);
     onSelect?.(choice);
     setIsOpen(false);
+
+    if (choice.href) {
+      if (typeof window !== "undefined") {
+        window.open(choice.href, choice.target || "_blank", choice.rel || "noopener,noreferrer");
+      }
+    }
   };
 
   return (
@@ -206,7 +203,7 @@ export function BookingDialog({
                       >
                         <div
                           className={cn(
-                            "mt-0.5 flex h-10 w-10 items-center justify-center rounded-full",
+                            "mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full",
                             isSelected ? "bg-primary text-white" : "bg-primary/10 text-primary"
                           )}
                         >
@@ -217,9 +214,12 @@ export function BookingDialog({
                           )}
                         </div>
 
-                        <div>
-                          <div className="text-base font-semibold text-foreground">
-                            {choice.label}
+                        <div className="flex-1">
+                          <div className="flex items-center justify-between gap-2 text-base font-semibold text-foreground">
+                            <span>{choice.label}</span>
+                            {choice.href && (
+                              <ExternalLink className="h-4 w-4 text-primary shrink-0" />
+                            )}
                           </div>
                           <div className="mt-1 text-sm leading-6 text-muted-foreground">
                             {choice.description}
@@ -232,7 +232,7 @@ export function BookingDialog({
 
                 <p aria-live="polite" className="mt-4 text-sm text-muted-foreground">
                   {selectedChoice
-                    ? `Selected: ${selectedChoice.label}`
+                    ? `Selected: ${selectedChoice.label}${selectedChoice.href ? " (Opening destination...)" : ""}`
                     : "No selection made yet."}
                 </p>
               </div>

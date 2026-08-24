@@ -1,3 +1,4 @@
+export * from "./booking";
 export * from "./clinic";
 export * from "./contact";
 export * from "./doctors";
