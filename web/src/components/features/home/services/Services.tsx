@@ -10,9 +10,10 @@ import {
   PageHeader,
   SectionContainer,
 } from "@/components/shared";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 
 import { treatments } from "@/content";
+import { cn } from "@/lib/utils";
 
 import {
   Icons,
@@ -79,14 +80,14 @@ export function Services() {
             buttonClassName="w-full px-8 sm:w-auto"
           />
 
-          <Link href="#consultation" className="w-full sm:w-auto">
-            <Button
-              variant="outline"
-              size="lg"
-              className="w-full px-8 sm:w-auto"
-            >
-              Speak to Our Team
-            </Button>
+          <Link
+            href="#consultation"
+            className={cn(
+              buttonVariants({ variant: "outline", size: "lg" }),
+              "w-full px-8 sm:w-auto",
+            )}
+          >
+            Speak to Our Team
           </Link>
         </div>
       </AnimatedSection>

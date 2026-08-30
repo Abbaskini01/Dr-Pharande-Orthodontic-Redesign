@@ -8,12 +8,13 @@ import {
   BookingDialog,
   SectionContainer,
 } from "@/components/shared";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 
 import {
   Icons,
   routes,
 } from "@/lib";
+import { cn } from "@/lib/utils";
 
 export function CTA() {
   return (
@@ -147,23 +148,14 @@ export function CTA() {
               "
             />
 
-            <Link href={routes.treatments} className="w-full sm:w-auto">
-              <Button
-                variant="outline"
-                size="lg"
-                className="
-                  w-full
-                  rounded-full
-                  px-8
-                  border-white/30
-                  bg-transparent
-                  text-white
-                  hover:bg-white/10
-                  sm:w-auto
-                "
-              >
-                Explore Treatments
-              </Button>
+            <Link
+              href={routes.treatments}
+              className={cn(
+                buttonVariants({ variant: "outline", size: "lg" }),
+                "w-full rounded-full border-white/30 bg-transparent px-8 text-white hover:bg-white/10 sm:w-auto",
+              )}
+            >
+              Explore Treatments
             </Link>
           </div>
         </motion.div>

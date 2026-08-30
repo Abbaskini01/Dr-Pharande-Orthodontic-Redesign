@@ -3,6 +3,7 @@
 import {
   useEffect,
   useId,
+  useLayoutEffect,
   useRef,
   useState,
   type ReactNode,
@@ -52,6 +53,7 @@ export function BookingDialog({
   const [selectedChoice, setSelectedChoice] = useState<BookingChoice | null>(null);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+  const wasOpenRef = useRef(false);
   const titleId = useId();
   const descriptionId = useId();
   const dialogId = useId();
@@ -76,12 +78,14 @@ export function BookingDialog({
     };
   }, [isOpen]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (isOpen) {
       closeButtonRef.current?.focus();
-    } else {
+    } else if (wasOpenRef.current) {
       triggerRef.current?.focus();
     }
+
+    wasOpenRef.current = isOpen;
   }, [isOpen]);
 
   const handleChoiceSelect = (choice: BookingChoice) => {

@@ -4,9 +4,10 @@ import Link from "next/link";
 import { ArrowRight, CalendarDays } from "lucide-react";
 
 import { BookingDialog } from "@/components/shared";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { clinic } from "@/content";
 import { routes } from "@/lib";
+import { cn } from "@/lib/utils";
 
 export function HeroButtons() {
   return (
@@ -38,36 +39,25 @@ export function HeroButtons() {
       />
 
       {/* Secondary CTA */}
-      <Link href={routes.treatments} className="w-full sm:w-auto">
-        <Button
-          variant="outline"
-          size="lg"
-          className="
-            group
-            w-full
-            rounded-full
-            border-border
-            px-8
-            transition-all
-            duration-300
-            hover:border-primary
-            hover:bg-primary/5
-            sm:w-auto
-          "
-        >
-          {clinic.hero.secondaryCTA.label}
+      <Link
+        href={routes.treatments}
+        className={cn(
+          buttonVariants({ variant: "outline", size: "lg" }),
+          "group w-full rounded-full border-border px-8 transition-all duration-300 hover:border-primary hover:bg-primary/5 sm:w-auto",
+        )}
+      >
+        {clinic.hero.secondaryCTA.label}
 
-          <ArrowRight
-            className="
-              ml-2
-              h-4
-              w-4
-              transition-transform
-              duration-300
-              group-hover:translate-x-1
-            "
-          />
-        </Button>
+        <ArrowRight
+          className="
+            ml-2
+            h-4
+            w-4
+            transition-transform
+            duration-300
+            group-hover:translate-x-1
+          "
+        />
       </Link>
 
     </div>
