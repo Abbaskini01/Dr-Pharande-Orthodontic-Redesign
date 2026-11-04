@@ -9,19 +9,27 @@ import {
   type ReactNode,
 } from "react";
 import { createPortal } from "react-dom";
-import { CalendarRange, ExternalLink, MessageSquareText, X } from "lucide-react";
+import {
+  CalendarRange,
+  ExternalLink,
+  Mail,
+  MessageSquareText,
+  Phone,
+  X,
+} from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { getBookingChoices } from "@/content/booking";
+import { getBookingChoices, type BookingChoiceIcon } from "@/content/booking";
 import { cn } from "@/lib/utils";
 
 export interface BookingChoice {
   id: string;
   label: string;
   description: string;
-  href?: string;
+  href: string;
   target?: string;
   rel?: string;
+  icon?: BookingChoiceIcon;
 }
 
 export const defaultBookingChoices: BookingChoice[] = getBookingChoices();
@@ -92,12 +100,6 @@ export function BookingDialog({
     setSelectedChoice(choice);
     onSelect?.(choice);
     setIsOpen(false);
-
-    if (choice.href) {
-      if (typeof window !== "undefined") {
-        window.open(choice.href, choice.target || "_blank", choice.rel || "noopener,noreferrer");
-      }
-    }
   };
 
   return (
@@ -193,9 +195,11 @@ export function BookingDialog({
                     const isSelected = selectedChoice?.id === choice.id;
 
                     return (
-                      <button
+                      <a
                         key={choice.id}
-                        type="button"
+                        href={choice.href}
+                        target={choice.target}
+                        rel={choice.rel}
                         onClick={() => handleChoiceSelect(choice)}
                         className={cn(
                           "flex w-full items-start gap-3 rounded-2xl border p-4 text-left transition-all duration-300",
@@ -211,17 +215,21 @@ export function BookingDialog({
                             isSelected ? "bg-primary text-white" : "bg-primary/10 text-primary"
                           )}
                         >
-                          {choice.id === "book-online" ? (
-                            <CalendarRange className="h-5 w-5" />
-                          ) : (
+                          {choice.icon === "phone" ? (
+                            <Phone className="h-5 w-5" />
+                          ) : choice.icon === "mail" ? (
+                            <Mail className="h-5 w-5" />
+                          ) : choice.icon === "message" ? (
                             <MessageSquareText className="h-5 w-5" />
+                          ) : (
+                            <CalendarRange className="h-5 w-5" />
                           )}
                         </div>
 
-                        <div className="flex-1">
+                        <div className="min-w-0 flex-1">
                           <div className="flex items-center justify-between gap-2 text-base font-semibold text-foreground">
                             <span>{choice.label}</span>
-                            {choice.href && (
+                            {choice.target === "_blank" && (
                               <ExternalLink className="h-4 w-4 text-primary shrink-0" />
                             )}
                           </div>
@@ -229,14 +237,14 @@ export function BookingDialog({
                             {choice.description}
                           </div>
                         </div>
-                      </button>
+                      </a>
                     );
                   })}
                 </div>
 
                 <p aria-live="polite" className="mt-4 text-sm text-muted-foreground">
                   {selectedChoice
-                    ? `Selected: ${selectedChoice.label}${selectedChoice.href ? " (Opening destination...)" : ""}`
+                    ? `Selected: ${selectedChoice.label}`
                     : "No selection made yet."}
                 </p>
               </div>

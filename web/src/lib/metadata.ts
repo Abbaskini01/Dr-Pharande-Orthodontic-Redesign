@@ -2,6 +2,13 @@ import type { Metadata } from "next";
 
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://drpharande.com";
 
+export const socialShareImage = {
+  url: "/og-image.jpg",
+  width: 1200,
+  height: 630,
+  alt: "Dr. Pharande Orthodontic & Dental Clinic — Creating Healthy & Beautiful Smiles",
+} as const;
+
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
@@ -36,12 +43,14 @@ export const defaultMetadata: Metadata = {
     locale: "en_IN",
     type: "website",
     url: siteUrl,
+    images: [socialShareImage],
   },
 
   twitter: {
     card: "summary_large_image",
     title: "Dr. Pharande Orthodontic & Dental Clinic",
     description: "Advanced Orthodontic & Dental Care in Pune with 24+ Years of Excellence.",
+    images: [socialShareImage],
   },
 };
 
@@ -77,11 +86,13 @@ export function createPageMetadata({
       locale: "en_IN",
       type: "website",
       url: canonicalUrl,
+      images: [socialShareImage],
     },
     twitter: {
       card: "summary_large_image",
       title: pageTitle,
       description,
+      images: [socialShareImage],
     },
   };
 }

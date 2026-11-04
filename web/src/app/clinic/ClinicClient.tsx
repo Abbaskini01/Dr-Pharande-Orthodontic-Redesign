@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Award, CheckCircle2, HeartHandshake, ShieldCheck, Sparkles } from "lucide-react";
 
@@ -50,6 +51,23 @@ export function ClinicClient() {
                   Explore Treatments
                 </Button>
               </Link>
+            </div>
+          </div>
+        </AnimatedSection>
+      </SectionContainer>
+
+      {/* Clinic Environment */}
+      <SectionContainer className="bg-slate-50/50 pt-0">
+        <AnimatedSection>
+          <div className="relative overflow-hidden rounded-3xl border border-border shadow-xl">
+            <div className="relative aspect-[16/7] w-full">
+              <Image
+                src="/images/dental-treatment-room-wide.jpg"
+                alt="Modern dental treatment room with a dental chair and overhead equipment"
+                fill
+                sizes="(max-width: 1024px) 100vw, 1120px"
+                className="object-cover"
+              />
             </div>
           </div>
         </AnimatedSection>

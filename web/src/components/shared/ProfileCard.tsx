@@ -6,7 +6,6 @@ import {
   Award,
   Briefcase,
   GraduationCap,
-  UserRound,
 } from "lucide-react";
 
 import { fadeInUp } from "@/lib";
@@ -27,6 +26,27 @@ interface ProfileCardProps {
   delay?: number;
 }
 
+/**
+ * Portrait photographs are supplied by the clinic. Until they are available the
+ * card shows a branded monogram so no visitor ever sees development copy.
+ */
+function getInitials(name: string) {
+  const parts = name
+    .replace(/^Dr\.?\s*/i, "")
+    .split(/\s+/)
+    .filter(Boolean);
+
+  if (parts.length === 0) {
+    return "";
+  }
+
+  if (parts.length === 1) {
+    return parts[0].charAt(0).toUpperCase();
+  }
+
+  return `${parts[0].charAt(0)}${parts[parts.length - 1].charAt(0)}`.toUpperCase();
+}
+
 export function ProfileCard({
   name,
   designation,
@@ -37,6 +57,8 @@ export function ProfileCard({
   image,
   delay = 0,
 }: ProfileCardProps) {
+  const initials = getInitials(name);
+
   return (
     <motion.div
       variants={fadeInUp}
@@ -52,7 +74,7 @@ export function ProfileCard({
           overflow-hidden
         "
       >
-        {/* Image / Placeholder */}
+        {/* Portrait, or a branded monogram until clinic photography arrives */}
         <div
           className="
             relative
@@ -95,6 +117,7 @@ export function ProfileCard({
             />
           ) : (
             <div
+              aria-hidden="true"
               className="
                 flex
                 h-28
@@ -102,23 +125,28 @@ export function ProfileCard({
                 items-center
                 justify-center
                 rounded-full
-                bg-primary/10
+                border
+                border-primary/15
+                bg-primary
+                shadow-[0_18px_40px_-16px_rgba(15,118,110,0.65)]
+                ring-8
+                ring-primary/10
                 transition-all
                 duration-500
                 group-hover:scale-105
-                group-hover:bg-primary
+                group-hover:ring-primary/20
               "
             >
-              <UserRound
+              <span
                 className="
-                  h-14
-                  w-14
-                  text-primary
-                  transition-colors
-                  duration-500
-                  group-hover:text-white
+                  text-3xl
+                  font-semibold
+                  tracking-[0.14em]
+                  text-primary-foreground
                 "
-              />
+              >
+                {initials}
+              </span>
             </div>
           )}
 

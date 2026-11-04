@@ -205,8 +205,18 @@ test.describe("booking dialog", () => {
     }
     await expect(dialog).toBeVisible();
     await expect(dialog).toHaveAttribute("aria-modal", "true");
-    await expect(dialog.getByRole("button", { name: "Book Online" })).toBeVisible();
-    await expect(dialog.getByRole("button", { name: "Chat with Concierge" })).toBeVisible();
+    // Until the clinic confirms a booking platform or WhatsApp line, the dialog
+    // offers the verified contact routes instead of an unimplemented booking flow.
+    const callChoice = dialog.getByRole("link", { name: "Call to Book" });
+    const emailChoice = dialog.getByRole("link", { name: "Email Our Team" });
+
+    await expect(callChoice).toBeVisible();
+    await expect(callChoice).toHaveAttribute("href", "tel:+919561035555");
+    await expect(emailChoice).toBeVisible();
+    await expect(emailChoice).toHaveAttribute(
+      "href",
+      "mailto:drpharande.clinic@gmail.com",
+    );
     await expect(closeButton).toBeFocused();
 
     await closeButton.click();

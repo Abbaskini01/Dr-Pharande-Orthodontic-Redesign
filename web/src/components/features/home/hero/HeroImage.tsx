@@ -1,10 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Award,
   ShieldCheck,
-  Smile,
 } from "lucide-react";
 
 export function HeroImage() {
@@ -56,21 +56,27 @@ export function HeroImage() {
           sm:max-w-md
         "
       >
-        {/* Placeholder */}
-        <div className="px-6 text-center sm:px-10">
+        <Image
+          src="/images/clinic-treatment-room.jpg"
+          alt="Modern orthodontic treatment room with a dental chair and precision equipment"
+          fill
+          preload
+          sizes="(max-width: 640px) 90vw, 448px"
+          className="object-cover"
+        />
 
-          <Smile className="mx-auto mb-6 h-20 w-20 text-primary" />
-
-          <h3 className="text-2xl font-bold text-foreground sm:text-3xl">
-            Doctor Photograph
-          </h3>
-
-          <p className="mt-4 leading-7 text-muted-foreground">
-            Replace this placeholder with the official
-            clinic photograph after the client meeting.
-          </p>
-
-        </div>
+        {/* Readability overlay for the floating cards */}
+        <div
+          aria-hidden="true"
+          className="
+            absolute
+            inset-0
+            bg-linear-to-t
+            from-slate-950/35
+            via-slate-950/5
+            to-transparent
+          "
+        />
 
         {/* Experience Card */}
         <motion.div
