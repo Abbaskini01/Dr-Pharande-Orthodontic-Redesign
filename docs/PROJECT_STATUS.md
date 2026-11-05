@@ -1,6 +1,6 @@
 # Project Status
 
-Last verified: 2026-11-04 · Branch `agents/phase-9-complete-homepage-redesign` · App root `web/`
+Last verified: 2026-11-05 · Branch `agents/phase-9-complete-homepage-redesign` · App root `web/`
 
 ## Implemented and verified
 
@@ -39,7 +39,16 @@ Last verified: 2026-11-04 · Branch `agents/phase-9-complete-homepage-redesign` 
 
 ## Deployment
 
-- GitHub: `Abbaskini01/Dr-Pharande-Orthodontic-Redesign`
-- Vercel: root directory must be `web`; no `vercel.json` required
+- GitHub: `Abbaskini01/Dr-Pharande-Orthodontic-Redesign`, branch
+  `agents/phase-9-complete-homepage-redesign` at commit `987b420`
+- Vercel project: `dr-pharande-orthodontic` (team `abbass-projects-73d00cd5`), Root Directory
+  `web`, framework Next.js; no `vercel.json` required
+- Production URL: <https://dr-pharande-orthodontic.vercel.app> — verified live (all routes,
+  metadata, sitemap, robots, icons, share image and booking dialog)
+- Environment variable `NEXT_PUBLIC_SITE_URL=https://drpharande.com` is set for Production and
+  Development (canonical URLs therefore already target the intended domain)
+- Application root: because the Root Directory is `web`, run future CLI uploads from the
+  repository root (`vercel deploy --prod` at the repo root), or simply push to the branch and
+  let the connected GitHub repository build the deployment
 - Domain: `drpharande.com` (confirmed as the intended production domain); DNS changes require
-  owner approval
+  owner approval, and the custom domain still has to be attached in Vercel
